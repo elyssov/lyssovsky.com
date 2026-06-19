@@ -91,6 +91,42 @@ a { color: inherit; text-decoration: none; }
 }
 .nav__links a:hover { color: var(--gold); }
 
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.6vw, 34px);
+}
+
+/* ---------- LANGUAGE TOGGLE ---------- */
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--ui);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(15, 14, 12, 0.35);
+  backdrop-filter: blur(6px);
+}
+.lang__btn {
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 1px 2px;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--ivory-faint);
+  transition: color 0.3s var(--ease);
+}
+.lang__btn:hover { color: var(--ivory); }
+.lang__btn.is-active { color: var(--gold); }
+.lang__sep { color: var(--ivory-faint); user-select: none; }
+
 /* ---------- BUTTONS ---------- */
 .btn {
   display: inline-block;
