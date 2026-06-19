@@ -680,6 +680,135 @@ a { color: inherit; text-decoration: none; }
   color: var(--ivory-faint);
 }
 
+/* ---------- PROOF / AVAILABILITY STRIP ---------- */
+.proofbar {
+  position: relative;
+  z-index: 2;
+  background: var(--black);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px clamp(20px, 7vw, 110px);
+}
+.proofbar__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(18px, 4vw, 48px);
+  flex-wrap: wrap;
+}
+.proofbar__avail {
+  margin: 0;
+  font-family: var(--ui);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ivory-dim);
+  max-width: 60ch;
+}
+.proofbar__avail strong { color: var(--ivory); font-weight: 600; }
+.proofbar__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.proofbar__badges li {
+  font-family: var(--ui);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+/* ---------- SECTION PITCH (practical lines) ---------- */
+.section__pitch {
+  font-family: var(--serif-body);
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.6;
+  color: var(--ivory-dim);
+  max-width: 70ch;
+  margin: 0 0 40px;
+  padding-left: 20px;
+  border-left: 2px solid var(--gold);
+}
+.section__pitch strong { color: var(--ivory); font-weight: 600; }
+.section__pitch--hire { margin-bottom: 48px; }
+
+/* ---------- HIRE: target roles + CV ---------- */
+.hire__targets { margin: 0 0 40px; }
+.hire__targets-title {
+  font-family: var(--ui);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 18px;
+}
+.hire__targets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hire__targets-list li {
+  font-family: var(--ui);
+  font-size: 13px;
+  color: var(--ivory);
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  background: var(--brown-2);
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.hire__targets-list li:hover { border-color: var(--gold); color: var(--gold); }
+
+.hire__cv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 26px clamp(22px, 4vw, 40px);
+  margin: 0 0 24px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--gold);
+  background: var(--brown-2);
+}
+.hire__cv-label {
+  font-family: var(--serif-display);
+  font-size: 22px;
+  color: var(--gold);
+  margin: 0 0 4px;
+}
+.hire__cv-note {
+  font-family: var(--ui);
+  font-size: 14px;
+  color: var(--ivory-dim);
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* ---------- CONTACT best line ---------- */
+.contact__best {
+  font-family: var(--serif-body);
+  font-size: clamp(17px, 2vw, 20px);
+  color: var(--ivory-dim);
+  margin: 0 0 36px;
+}
+.contact__best a {
+  color: var(--gold);
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.3s var(--ease);
+}
+.contact__best a:hover { border-color: var(--gold); }
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
   .nav__links { gap: 14px; font-size: 11px; }
