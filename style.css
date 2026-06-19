@@ -337,6 +337,39 @@ a { color: inherit; text-decoration: none; }
 }
 .voice__text .amp { color: var(--gold); font-style: normal; font-weight: 600; }
 
+.about__side {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.6vw, 30px);
+}
+.about__portrait {
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  overflow: hidden;
+  background: var(--black);
+}
+.about__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: saturate(1.02) contrast(1.02);
+}
+.about__portrait figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 30px 18px 14px;
+  font-family: var(--ui);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivory-dim);
+  background: linear-gradient(to top, rgba(15,14,12,0.92), transparent);
+}
+
 .about__facts {
   display: flex;
   flex-direction: column;
