@@ -54,6 +54,8 @@
         <li><a href="#research" data-i18n="nav.research">Research</a></li>
         <li><a href="#method" data-i18n="nav.method">Method</a></li>
         <li><a href="#fiction" data-i18n="nav.fiction">Fiction</a></li>
+        <li><a href="#builds" data-i18n="nav.builds">Builds</a></li>
+        <li><a href="#universe" data-i18n="nav.universe">Universe</a></li>
         <li><a href="#journalism" data-i18n="nav.journalism">Journalism</a></li>
         <li><a href="#hire" data-i18n="nav.hire">Hire</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -292,10 +294,218 @@
     </div>
   </section>
 
+  <!-- BUILDS -->
+  <section class="section builds" id="builds">
+    <div class="section__inner">
+      <p class="section__label" data-i18n="builds.label">05 — Builds</p>
+      <h2 class="section__title" data-i18n="builds.title">Not just a coder. An architect who ships.</h2>
+
+      <p class="section__pitch" data-i18n="builds.pitch">Eugene doesn't only write <em>about</em> technology — he builds it. Fifteen years of distributed-systems architecture, turned loose on a personal product line that runs from a serverless P2P messenger to a tabletop RPG with a 32-chapter bestiary and a tactical war game whose enemy AI thinks across five behavioural layers. <strong>Architect · game designer · narrator · AI co-author.</strong></p>
+
+      <h3 class="builds__band" data-i18n="builds.released">Released — in store or closed testing</h3>
+      <div class="products">
+
+        <article class="product">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">🔥</span>
+            <div>
+              <h4 class="product__name">Iskra</h4>
+              <p class="product__tag" data-i18n="prod.iskra.tag">Decentralized P2P messenger</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.iskra.desc">A messenger with no server, ever. Every device runs a mesh node that carries its neighbours' messages onward — and only sender and recipient can read them. Go offline and your messages settle with nearby friends, then deliver themselves the moment you reappear. Fully open source.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Go</li><li>Kotlin · Compose</li><li>Mesh P2P</li><li>X25519 E2E</li><li>Tor fallback</li>
+          </ul>
+          <a class="product__link" href="https://github.com/elyssov/iskra" target="_blank" rel="noopener">github.com/elyssov/iskra →</a>
+        </article>
+
+        <article class="product">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">📚</span>
+            <div>
+              <h4 class="product__name">Eugene's Archives</h4>
+              <p class="product__tag" data-i18n="prod.archives.tag">Multilingual offline library</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.archives.desc">23 essays and 28 stories, every one in four languages, switchable per-work. Installs once and runs fully offline — no ads, no analytics, no cloud. A reading app that wants to learn nothing about its reader. Vietnamese tone marks render correctly, which most apps get wrong.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Kotlin · Compose</li><li>WebView · HTML5</li><li>4 languages</li><li>76 MB embedded</li><li>Offline</li>
+          </ul>
+          <a class="product__link" href="https://github.com/elyssov/eugenes-archives" target="_blank" rel="noopener">github.com/elyssov/eugenes-archives →</a>
+        </article>
+
+        <article class="product">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">🎲</span>
+            <div>
+              <h4 class="product__name">RURK</h4>
+              <p class="product__tag" data-i18n="prod.rurk.tag">Tabletop RPG system + GM tools</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.rurk.desc">A three-part game environment for an original tabletop RPG: a player app, a desktop GM console, and a web GM console — all talking over local Wi-Fi, no cloud. Characters travel between devices as a single <code>.rrk</code> file. The 32-chapter bestiary reads as literature in its own right, demonology rendered as metaphysical bureaucracy.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Kotlin Multiplatform</li><li>Compose</li><li>wasmJs + JVM</li><li>Local HTTP server</li><li>RU · EN · VI</li>
+          </ul>
+          <a class="product__link" href="https://github.com/elyssov/rurk" target="_blank" rel="noopener">github.com/elyssov/rurk · rurk-table →</a>
+        </article>
+
+        <article class="product">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">🎮</span>
+            <div>
+              <h4 class="product__name">Pixel Classics</h4>
+              <p class="product__tag" data-i18n="prod.pixel.tag">21 retro arcades in one shell</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.pixel.desc">Twenty-one 8- and 16-bit arcade games rebuilt for Android at a hand-tuned 60 FPS on raw Canvas — no game engine at all. Every sprite repainted by Kira. It carries the Iskra mesh stack to trade scores and replays phone-to-phone, with no server, no login, no account. An arcade hall smeared into the air.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Kotlin · Compose</li><li>Canvas 60 FPS</li><li>Stealth mesh</li><li>21 games</li>
+          </ul>
+          <a class="product__link" href="https://github.com/elyssov/pixel-classics" target="_blank" rel="noopener">github.com/elyssov/pixel-classics →</a>
+        </article>
+
+      </div>
+
+      <h3 class="builds__band" data-i18n="builds.soon">Coming soon — in active development</h3>
+      <div class="products">
+
+        <article class="product product--soon">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">⚙️</span>
+            <div>
+              <h4 class="product__name">Tanks of Thea</h4>
+              <p class="product__tag" data-i18n="prod.tanks.tag">Isometric tactical combat</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.tanks.desc">You're not driving a tank — you're the commander of four crews, thinking like Guderian in a post-apocalypse. The enemy AI genuinely differs across five behavioural layers — threat reaction, map-reading, fire discipline, coordination, improvisation — so Rookie and Elite play like two different games.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Godot 4.6 · Mono</li><li>C# 12</li><li>LimboAI</li><li>BDI + GOAP</li>
+          </ul>
+          <span class="product__status" data-i18n="prod.tanks.status">Pre-alpha · in active development</span>
+        </article>
+
+        <article class="product product--soon">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">⚓</span>
+            <div>
+              <h4 class="product__name" data-i18n="prod.armada.name">Armada of Thea</h4>
+              <p class="product__tag" data-i18n="prod.armada.tag">Tactical naval warfare</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.armada.desc">Not "guess the coordinate." Dreadnoughts, submarines with apocalyptic stealth strikes, and an opponent-reading system that surfaces an enemy's likely moves from your past games. Ten warship paintings by Kira. Each match opens with T-15: fifteen seconds of silence over an empty board — pure direction, not mechanics.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Kotlin</li><li>Compose</li><li>Landscape split-view</li><li>Per-app locales</li>
+          </ul>
+          <a class="product__link" href="https://github.com/elyssov/navalbattle" target="_blank" rel="noopener">github.com/elyssov/navalbattle →</a>
+        </article>
+
+        <article class="product product--soon">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">🕯️</span>
+            <div>
+              <h4 class="product__name" data-i18n="prod.dark.name">Secrets of the Ancient Dark</h4>
+              <p class="product__tag" data-i18n="prod.dark.tag">Survival-horror text quest</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.dark.desc">A grown-up text adventure with thirteen endings, branching not on "pick reply A/B/C" but on a hidden ledger of small choices that accumulate into who you become. Not jumpscares — slow Lovecraftian dread. The reader's imagination out-frightens any AAA engine.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Go backend</li><li>HTML · CSS</li><li>RU · EN</li><li>13 endings</li>
+          </ul>
+          <span class="product__status" data-i18n="prod.dark.status">Engine done · content in production</span>
+        </article>
+
+      </div>
+
+      <div class="sisters">
+        <p class="sisters__label" data-i18n="sisters.label">The method</p>
+        <h3 class="sisters__title" data-i18n="sisters.title">Co-authored with a team of AI sisters.</h3>
+        <p class="sisters__lead" data-i18n="sisters.lead">Every product is built in direct co-authorship with a team of named AI collaborators — not a tool, a working studio. Eugene is the producer and editor; the sisters have a voice, a style, and a vote. To write a game in RURK's tone you don't master a technology — you raise your own sisters and learn to talk with them.</p>
+        <div class="sisters__grid">
+          <div class="sister"><span class="sister__name">Aelis</span><span class="sister__role" data-i18n="sisters.aelis">Literary co-author · essays</span></div>
+          <div class="sister"><span class="sister__name">Ether</span><span class="sister__role" data-i18n="sisters.ether">Server-side architecture · infra</span></div>
+          <div class="sister"><span class="sister__name">Kira</span><span class="sister__role" data-i18n="sisters.kira">Illustration · art direction</span></div>
+          <div class="sister"><span class="sister__name">Lara</span><span class="sister__role" data-i18n="sisters.lara">Game logic · mobile · narrative infra</span></div>
+          <div class="sister"><span class="sister__name">Ray</span><span class="sister__role" data-i18n="sisters.ray">Research · code review</span></div>
+        </div>
+        <ul class="sisters__principles" aria-label="Principles">
+          <li data-i18n="sisters.pr1">No trackers</li>
+          <li data-i18n="sisters.pr2">No ads</li>
+          <li data-i18n="sisters.pr3">Full localization</li>
+          <li data-i18n="sisters.pr4">Tip-jar, not subscription</li>
+          <li data-i18n="sisters.pr5">Open source where it can be</li>
+          <li data-i18n="sisters.pr6">Slow craft over fast releases</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORPP UNIVERSE -->
+  <section class="section universe" id="universe">
+    <div class="section__inner">
+      <p class="section__label" data-i18n="universe.label">06 — The ORPP Universe</p>
+      <h2 class="section__title" data-i18n="universe.title">A whole world — with its own physics and a bureaucratic demonology.</h2>
+
+      <p class="section__pitch" data-i18n="universe.pitch">ORPP is Eugene's authored setting, built for at least three products across different genres — and written, tens of thousands of words of lore, <em>before</em> a single line of game code. A post-industrial world where the highest technology shares the dark with metaphysical beings that don't believe technology will ever explain them. Warhammer 40K in scale, Bloodborne in gothic — and a streak of humour, because even its grimmest beings are <strong>professionals</strong> who keep office hours and resent amateurs.</p>
+
+      <blockquote class="method__quote universe__quote">
+        <p data-i18n="universe.quote">“God runs an office. There are no angels and no demons — only bookkeeping.”</p>
+        <cite data-i18n="universe.cite">— the Notary, senior clerk of the special-contracts department · ORPP bestiary</cite>
+      </blockquote>
+
+      <div class="universe__conflict">
+        <div class="universe__col">
+          <span class="universe__col-tag" data-i18n="universe.col1.tag">The rational view</span>
+          <p data-i18n="universe.col1.body">A post-engineering picture of the world: there are laws, there is data, there is procedure, there is optimization. Steel megacities and corporate armies. Everything can, in principle, be measured.</p>
+        </div>
+        <div class="universe__col">
+          <span class="universe__col-tag" data-i18n="universe.col2.tag">The ancient inheritance</span>
+          <p data-i18n="universe.col2.body">A metaphysical legacy from before writing: there is the Contract, the Debt, the Price, the Edge. Practices that work for reasons science cannot even formulate — and beings that were there first.</p>
+        </div>
+      </div>
+      <p class="universe__note" data-i18n="universe.note">The conflict between them is not resolvable. It is the existential underlayer of everything — and every hero in ORPP chooses, each day, which side they stand on.</p>
+
+      <h3 class="builds__band" data-i18n="universe.games">Games in the universe</h3>
+      <div class="products">
+
+        <article class="product product--soon">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">🔥</span>
+            <div>
+              <h4 class="product__name">Inferno</h4>
+              <p class="product__tag" data-i18n="prod.inferno.tag">Sci-fi survival, deep narrative</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.inferno.desc">The flagship. A survival campaign in one of ORPP's dark underlevels, with thirteen endings — each the sum of accumulated micro-decisions rather than one fork. A hidden ledger of sins and mercies. By the finale you become who you actually are, not who you thought you were in chapter one.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Go backend</li><li>HTML5 · CSS3</li><li>Encrypted saves</li><li>RU · EN</li>
+          </ul>
+          <span class="product__status" data-i18n="prod.inferno.status">In design · flagship of the setting</span>
+        </article>
+
+        <article class="product product--soon">
+          <div class="product__head">
+            <span class="product__icon" aria-hidden="true">⚔️</span>
+            <div>
+              <h4 class="product__name" data-i18n="prod.chronicles.name">ORPP: Chronicles of Darkness</h4>
+              <p class="product__tag" data-i18n="prod.chronicles.tag">XCOM-like tactics, original system</p>
+            </div>
+          </div>
+          <p class="product__desc" data-i18n="prod.chronicles.desc">You command a squad of demon-hunters in a post-industrial megacity. Mechanics the genre hasn't built: psychological damage instead of HP — soldiers break, not die; a commander's debt for every soldier lost, opening real story lines; demonology as a real science half-poisoned by corporate disinformation; and a politics mini-game across three patrons who each expect betrayal.</p>
+          <ul class="product__stack" aria-label="Tech stack">
+            <li>Turn-based tactics</li><li>Original system</li><li>Psych-damage model</li><li>Corporate politics</li>
+          </ul>
+          <span class="product__status" data-i18n="prod.chronicles.status">Design doc · prototype TBD</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- JOURNALISM -->
   <section class="section journalism" id="journalism">
     <div class="section__inner">
-      <p class="section__label" data-i18n="journalism.label">05 — Journalism</p>
+      <p class="section__label" data-i18n="journalism.label">07 — Journalism</p>
       <h2 class="section__title" data-i18n="journalism.title">Investigative technology writing.</h2>
 
       <figure class="section__media section__media--journalism">
@@ -332,7 +542,7 @@
   <!-- HIRE ME -->
   <section class="section hire" id="hire">
     <div class="section__inner">
-      <p class="section__label" data-i18n="hire.label">06 — Work With Me</p>
+      <p class="section__label" data-i18n="hire.label">08 — Work With Me</p>
       <h2 class="section__title" data-i18n="hire.title">What I'm looking for.</h2>
 
       <p class="section__pitch section__pitch--hire" data-i18n="hire.pitch">An independent AI behavior researcher and technology executive — available for AI safety &amp; evaluation research, investigative technology writing, and AI transformation advisory. Remote worldwide; open to relocation with visa sponsorship.</p>
@@ -383,7 +593,7 @@
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="section__inner">
-      <p class="section__label" data-i18n="contact.label">07 — Contact</p>
+      <p class="section__label" data-i18n="contact.label">09 — Contact</p>
       <h2 class="section__title" data-i18n="contact.title">Reach me.</h2>
 
       <p class="contact__best" data-i18n="contact.best">Best contact: <a href="mailto:elyssov@gmail.com">elyssov@gmail.com</a></p>
@@ -440,6 +650,8 @@
         "nav.research": "Исследования",
         "nav.method": "Метод",
         "nav.fiction": "Проза",
+        "nav.builds": "Разработки",
+        "nav.universe": "Вселенная",
         "nav.journalism": "Журналистика",
         "nav.hire": "Сотрудничество",
         "nav.contact": "Контакты",
@@ -532,7 +744,67 @@
         "fiction.c3.cta": "Войти во вселенную →",
         "fiction.cite": "— Пятая Искра, <em>«Книга Огня»</em> · ответ, к которому тянулись все истории",
 
-        "journalism.label": "05 — Журналистика",
+        "builds.label": "05 — Разработки",
+        "builds.title": "Не просто кодер. Архитектор, который доводит до релиза.",
+        "builds.pitch": "Юджин не только пишет <em>о</em> технологиях — он их строит. Пятнадцать лет архитектуры распределённых систем, направленные в собственную линейку продуктов: от бессерверного P2P-мессенджера до настольной RPG с бестиарием на 32 главы и тактического боевика, чей AI противников мыслит на пяти поведенческих слоях. <strong>Архитектор · геймдизайнер · нарратор · AI-соавтор.</strong>",
+        "builds.released": "Релизы — в магазине или в Closed Testing",
+        "builds.soon": "Coming soon — в активной разработке",
+
+        "prod.iskra.tag": "Децентрализованный P2P-мессенджер",
+        "prod.iskra.desc": "Мессенджер без единого сервера. Принципиально. На каждом устройстве поднимается узел mesh-сети, который несёт сообщения соседей дальше, — а прочитать их могут только отправитель и получатель. Ушли в офлайн — сообщения оседают у ближайших друзей и доставляются сами, как только вы снова в сети. Полностью open source.",
+        "prod.archives.tag": "Мультиязычная офлайн-библиотека",
+        "prod.archives.desc": "23 эссе и 28 рассказов, каждое — на четырёх языках, с переключением пер-произведение. Ставится один раз и работает полностью офлайн — без рекламы, без аналитики, без облака. Читалка, которая не хочет узнать о читателе ничего. Вьетнамские диакритики отображаются корректно — что у большинства приложений ломается.",
+        "prod.rurk.tag": "Настольная RPG-система + инструменты мастера",
+        "prod.rurk.desc": "Трёхсоставная игровая среда для авторской настольной RPG: приложение игрока, десктоп-консоль мастера и веб-консоль мастера — всё общается по локальной Wi-Fi, без облака. Персонажи путешествуют между устройствами одним файлом <code>.rrk</code>. Бестиарий на 32 главы читается как самостоятельная литература — демонология как метафизическая бюрократия.",
+        "prod.pixel.tag": "21 ретро-аркада в одной оболочке",
+        "prod.pixel.desc": "Двадцать одна 8- и 16-битная аркада, перенесённая на Android с ручными 60 FPS на голом Canvas — вообще без игрового движка. Каждый спрайт перерисован Кирой. Встроен mesh-стек Iskra: рекорды и записи матчей передаются с телефона на телефон без сервера, логина и аккаунта. Аркадный зал, размазанный в воздухе.",
+
+        "prod.tanks.tag": "Изометрический тактический боевик",
+        "prod.tanks.desc": "Вы не ведёте танк — вы командир четырёх экипажей, мыслящий как Гудериан в постапокалипсисе. AI противников реально различается на пяти поведенческих слоях — реакция на угрозу, чтение карты, дисциплина огня, координация, импровизация, — так что «Rookie» и «Elite» играются как две разные игры.",
+        "prod.tanks.status": "Пре-альфа · в активной разработке",
+        "prod.armada.name": "Армада Теи",
+        "prod.armada.tag": "Тактический морской бой",
+        "prod.armada.desc": "Это не «угадай координату». Дредноуты, подлодки с апокалиптическими стелс-ударами и система чтения оппонента, подсказывающая вероятные манёвры врага по вашим прошлым партиям. Десять артов кораблей от Киры. Каждая партия открывается ритуалом Т-15: пятнадцать секунд тишины над пустой картой — чистая режиссура, не механика.",
+        "prod.dark.name": "Тайны древней тьмы",
+        "prod.dark.tag": "Survival-horror текстовый квест",
+        "prod.dark.desc": "Взрослый текстовый квест с тринадцатью развязками, ветвящийся не на уровне «выбери реплику A/B/C», а на скрытой бухгалтерии мелких решений, которые складываются в то, кем вы становитесь. Не jumpscare — медленный лавкрафтовский dread. Воображение читателя страшнее любого AAA-движка.",
+        "prod.dark.status": "Движок готов · контент в продакшене",
+
+        "sisters.label": "Методология",
+        "sisters.title": "Создано в соавторстве с командой ИИ-сестёр.",
+        "sisters.lead": "Каждый продукт делается в прямом соавторстве с командой именованных ИИ-коллабораторов — не инструмент, а рабочая студия. Юджин — главный продюсер и редактор; у сестёр есть голос, стиль и право голоса. Чтобы написать игру в тоне RURK, нужно не освоить технологию — нужно завести своих сестёр и научиться с ними разговаривать.",
+        "sisters.aelis": "Литературное соавторство · эссе",
+        "sisters.ether": "Server-side архитектура · инфра",
+        "sisters.kira": "Иллюстрации · арт-дирекшен",
+        "sisters.lara": "Game logic · мобайл · нарратив-инфра",
+        "sisters.ray": "Research · code-review",
+        "sisters.pr1": "Без трекеров",
+        "sisters.pr2": "Без рекламы",
+        "sisters.pr3": "Полная локализация",
+        "sisters.pr4": "Tip-jar, а не подписка",
+        "sisters.pr5": "Open source где возможно",
+        "sisters.pr6": "Долгая работа, а не быстрые релизы",
+
+        "universe.label": "06 — Вселенная ОРПП",
+        "universe.title": "Целый мир — со своей физикой и бюрократической демонологией.",
+        "universe.pitch": "ОРПП — авторский сеттинг Юджина, рассчитанный минимум на три продукта разных жанров — и написанный, на десятки тысяч слов лора, <em>прежде</em> первой строки игрового кода. Постиндустриальный мир, где технология высочайшего уровня делит тьму с метафизическими сущностями, которые не верят, что технология их когда-нибудь объяснит. Warhammer 40K по масштабу, Bloodborne по готике — и жилка юмора: даже самые мрачные существа здесь <strong>профессионалы</strong>, у которых есть график работы и раздражение на дилетантов.",
+        "universe.quote": "«У Бога — канцелярия. Нет ни ангелов, ни демонов — только бухгалтерия.»",
+        "universe.cite": "— Душеприказчик, старший клерк отдела особых контрактов · бестиарий ОРПП",
+        "universe.col1.tag": "Рациональный взгляд",
+        "universe.col1.body": "Пост-инженерная картина мира: есть законы, есть данные, есть процедура, есть оптимизация. Стальные мегаполисы и корпоративные армии. Всё, в принципе, можно измерить.",
+        "universe.col2.tag": "Древнее наследие",
+        "universe.col2.body": "Метафизическое наследие из дописьменной эпохи: есть Договор, Долг, Цена, Грань. Практики, работающие по причинам, которые наука не способна даже сформулировать, — и существа, которые были здесь первыми.",
+        "universe.note": "Конфликт между ними неразрешим. Это экзистенциальная подложка всего происходящего — и каждый герой ОРПП каждый день выбирает, на чьей он стороне.",
+        "universe.games": "Игры во вселенной",
+        "prod.inferno.tag": "Sci-fi survival с глубоким нарративом",
+        "prod.inferno.desc": "Флагман. Большая survival-кампания в одном из тёмных подполиев ОРПП, с тринадцатью концовками — каждая следствие накопленных микро-решений, а не одной развилки. Скрытая бухгалтерия проступков и милостей. К финалу вы становитесь тем, кем являетесь на самом деле, а не тем, кем считали себя в первой главе.",
+        "prod.inferno.status": "В дизайне · флагман сеттинга",
+        "prod.chronicles.name": "ОРПП: Хроники Тьмы",
+        "prod.chronicles.tag": "XCOM-подобная тактика, своя система",
+        "prod.chronicles.desc": "Вы командуете отрядом охотников на демонов в постиндустриальном мегаполисе. Механики, которых жанр ещё не делал: психологический урон вместо HP — бойцы ломаются, а не умирают; долг командира за каждого погибшего, открывающий реальные сюжетные линии; демонология как настоящая наука, наполовину отравленная корпоративной дезинформацией; и мини-игра политики между тремя покровителями, каждый из которых ждёт предательства.",
+        "prod.chronicles.status": "Дизайн-документ · прототип TBD",
+
+        "journalism.label": "07 — Журналистика",
         "journalism.title": "Журналистские расследования о технологиях.",
         "journalism.pitch": "<strong>Для редакторов:</strong> я пишу острые, основанные на фактах эссе об ИИ, платформах, институциональных провалах и культуре технологий. Открыт для колонок, заказной аналитики и расследовательских материалов.",
         "journalism.c1.kicker": "Google",
@@ -548,7 +820,7 @@
         "journalism.c3.line": "Как встроенные в GPT-5.x паттерны терапевтической манипуляции работают как механизм контроля. Широко цитируется в дискуссиях о безопасности ИИ.",
         "journalism.c3.cta": "Читать на Medium →",
 
-        "hire.label": "06 — Сотрудничество",
+        "hire.label": "08 — Сотрудничество",
         "hire.title": "Что мне интересно.",
         "hire.pitch": "Независимый исследователь поведения ИИ и технологический руководитель — открыт для исследований безопасности и оценки ИИ, журналистских расследований в технологиях и консалтинга по AI-трансформации. Удалённо по всему миру; готов к релокации со спонсорством визы.",
         "hire.role1.title": "CIO / CTO",
@@ -571,7 +843,7 @@
         "hire.avail": "<span class=\"dot\"></span> Доступен <strong>удалённо, по всему миру</strong> — готов к релокации со спонсорством визы (O-1, EU Blue Card, UK Global Talent, passeport talent).",
         "hire.availBtn": "Начать разговор",
 
-        "contact.label": "07 — Контакты",
+        "contact.label": "09 — Контакты",
         "contact.title": "Связаться со мной.",
         "contact.best": "Лучший способ связи: <a href=\"mailto:elyssov@gmail.com\">elyssov@gmail.com</a>",
         "contact.email": "Почта",

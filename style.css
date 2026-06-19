@@ -868,6 +868,235 @@ a { color: inherit; text-decoration: none; }
 }
 .contact__best a:hover { border-color: var(--gold); }
 
+/* ---------- BUILDS / PRODUCTS ---------- */
+.builds { background: var(--black); }
+.builds__band {
+  font-family: var(--ui);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 0 0 56px;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  background: var(--black);
+  padding: 32px 30px;
+  transition: background 0.4s var(--ease);
+}
+.product:hover { background: var(--brown-2); }
+.product--soon { background: var(--brown); }
+.product--soon:hover { background: var(--brown-2); }
+.product__head {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+.product__icon { font-size: 26px; line-height: 1.1; }
+.product__name {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;
+  margin: 0 0 5px;
+  color: var(--ivory);
+}
+.product:hover .product__name { color: var(--gold); }
+.product__tag {
+  font-family: var(--ui);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+.product__desc {
+  font-size: 15.5px;
+  line-height: 1.62;
+  color: var(--ivory-dim);
+  margin: 0 0 22px;
+}
+.product__desc code {
+  font-family: var(--ui);
+  font-size: 0.88em;
+  color: var(--gold);
+  background: rgba(212,165,71,0.08);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.product__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.product__stack li {
+  font-family: var(--ui);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ivory-dim);
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  background: rgba(15,14,12,0.5);
+  white-space: nowrap;
+}
+.product__link {
+  margin-top: auto;
+  font-family: var(--ui);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  transition: letter-spacing 0.3s var(--ease);
+}
+.product:hover .product__link { letter-spacing: 0.14em; }
+.product__status {
+  margin-top: auto;
+  font-family: var(--ui);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+/* ---------- AI SISTERS ---------- */
+.sisters {
+  padding: clamp(34px, 5vw, 52px) clamp(24px, 5vw, 56px);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  background: rgba(15,14,12,0.55);
+}
+.sisters__label {
+  font-family: var(--ui);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin: 0 0 12px;
+}
+.sisters__title {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  color: var(--ivory);
+}
+.sisters__lead {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--ivory-dim);
+  max-width: 70ch;
+  margin: 0 0 36px;
+}
+.sisters__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 0 0 30px;
+}
+.sister {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 20px;
+  background: var(--black);
+}
+.sister__name {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--gold);
+}
+.sister__role {
+  font-family: var(--ui);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ivory-dim);
+}
+.sisters__principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sisters__principles li {
+  font-family: var(--ui);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ivory);
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  background: var(--brown-2);
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.sisters__principles li:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ---------- ORPP UNIVERSE ---------- */
+.universe { background: var(--brown); }
+.universe__quote { margin: 0 0 48px; }
+.universe__conflict {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 0 0 20px;
+}
+.universe__col {
+  background: var(--black);
+  padding: 32px 30px;
+}
+.universe__col-tag {
+  display: block;
+  font-family: var(--ui);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.universe__col p {
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--ivory-dim);
+  margin: 0;
+}
+.universe__note {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.6;
+  color: var(--gold);
+  max-width: 64ch;
+  margin: 0 0 56px;
+  padding-left: 20px;
+  border-left: 2px solid var(--gold);
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
   .nav__links { gap: 14px; font-size: 11px; }
@@ -876,6 +1105,7 @@ a { color: inherit; text-decoration: none; }
   .method__pillars,
   .hire__grid,
   .contact__grid { grid-template-columns: 1fr 1fr; }
+  .sisters__grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 600px) {
   body { font-size: 17px; }
@@ -884,7 +1114,10 @@ a { color: inherit; text-decoration: none; }
   .cards, .cards--three,
   .method__pillars,
   .hire__grid,
-  .contact__grid { grid-template-columns: 1fr; }
+  .contact__grid,
+  .products,
+  .universe__conflict { grid-template-columns: 1fr; }
+  .sisters__grid { grid-template-columns: repeat(2, 1fr); }
   .hero__creed { font-size: 19px; }
   .hire__avail { flex-direction: column; align-items: flex-start; }
 
