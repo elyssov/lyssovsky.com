@@ -137,6 +137,12 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   z-index: 0;
 }
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+}
 .hero__placeholder {
   width: 100%;
   height: 100%;
@@ -255,6 +261,35 @@ a { color: inherit; text-decoration: none; }
   max-width: 18ch;
   color: var(--ivory);
 }
+
+/* ---------- SECTION MEDIA (cinematic stills) ---------- */
+.section__media {
+  position: relative;
+  margin: 0 0 48px;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  overflow: hidden;
+  background: var(--black);
+}
+.section__media img {
+  display: block;
+  width: 100%;
+  height: clamp(190px, 30vw, 320px);
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.02) contrast(1.02);
+}
+/* gentle vignette so the still sits inside the page rather than floating */
+.section__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(15,14,12,0.30) 0%, transparent 22%, transparent 70%, rgba(15,14,12,0.55) 100%);
+}
+.section__media--journalism img { object-position: center 32%; }
+.section__media--method img { object-position: center 40%; }
 
 /* ---------- ABOUT ---------- */
 .about { background: var(--brown); }
@@ -543,10 +578,14 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 70px 24px 56px;
+  padding: 80px 24px 60px;
   border-top: 1px solid var(--line);
-  background: var(--black);
+  background:
+    linear-gradient(to bottom, rgba(15,14,12,0.82), rgba(15,14,12,0.92)),
+    url("images/lyssovsky-footer-texture.png") center / cover no-repeat,
+    var(--black);
 }
+.footer > * { position: relative; }
 .footer__creed {
   font-family: var(--serif-display);
   font-style: italic;
