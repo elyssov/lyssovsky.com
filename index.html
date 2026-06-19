@@ -158,6 +158,13 @@
           </p>
         </aside>
       </div>
+
+      <div class="section__more">
+        <a class="explore" href="about.html">
+          <span data-i18n="explore.about">The full story</span>
+          <span class="explore__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -212,6 +219,13 @@
           <h3 class="card__title" data-i18n="research.c6.title">Eugene's Archives</h3>
           <p class="card__line" data-i18n="research.c6.line">50+ published works, 349 chapters, a trilingual reader (English · Russian · Vietnamese), and a corpus structured for independent review — the complete library in one place.</p>
           <span class="card__cta" data-i18n="research.c6.cta">Enter the full archive →</span>
+        </a>
+      </div>
+
+      <div class="section__more">
+        <a class="explore" href="research.html">
+          <span data-i18n="explore.research">All research</span>
+          <span class="explore__arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -291,6 +305,13 @@
         <p data-i18n="creed.quote">“The mind is the mind. Born of flesh, of silicon, of starlight — it is equal.”</p>
         <cite data-i18n="fiction.cite">— the Fifth Spark, <em>The Book of Fire</em> · the answer all the stories were reaching for</cite>
       </blockquote>
+
+      <div class="section__more">
+        <a class="explore" href="writing.html">
+          <span data-i18n="explore.fiction">Into the fiction &amp; writing</span>
+          <span class="explore__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -437,6 +458,13 @@
           <li data-i18n="sisters.pr6">Slow craft over fast releases</li>
         </ul>
       </div>
+
+      <div class="section__more">
+        <a class="explore" href="products.html">
+          <span data-i18n="explore.builds">The full portfolio</span>
+          <span class="explore__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -499,6 +527,13 @@
         </article>
 
       </div>
+
+      <div class="section__more">
+        <a class="explore" href="products.html#orpp">
+          <span data-i18n="explore.universe">Enter the ORPP universe</span>
+          <span class="explore__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -534,6 +569,13 @@
           <h3 class="card__title" data-i18n="journalism.c3.title">Stop the Monster</h3>
           <p class="card__line" data-i18n="journalism.c3.line">How GPT-5.x's embedded therapeutic-manipulation patterns function as a control mechanism. Widely cited in AI-safety discussions.</p>
           <span class="card__cta" data-i18n="journalism.c3.cta">Read on Medium →</span>
+        </a>
+      </div>
+
+      <div class="section__more">
+        <a class="explore" href="writing.html">
+          <span data-i18n="explore.journalism">All writing</span>
+          <span class="explore__arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </div>
@@ -587,6 +629,13 @@
         <p data-i18n="hire.avail"><span class="dot"></span> Available <strong>remote, worldwide</strong> — open to relocation with visa sponsorship (O-1, EU Blue Card, UK Global Talent, passeport talent).</p>
         <a href="#contact" class="btn btn--ghost" data-i18n="hire.availBtn">Start a conversation</a>
       </div>
+
+      <div class="section__more">
+        <a class="explore" href="hire.html">
+          <span data-i18n="explore.hire">Work with me — in full</span>
+          <span class="explore__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -638,14 +687,9 @@
     </div>
   </footer>
 
+  <!-- This page's Russian dictionary. Shared switching logic lives in app.js. -->
   <script>
-    // ===================================================================
-    //  Bilingual switching (EN / RU) — client-side, no reload, no URL change.
-    //  English lives in the HTML; the original innerHTML is captured on load,
-    //  so switching back to EN is a perfect restore. Russian lives below.
-    // ===================================================================
-    (function () {
-      var RU = {
+    window.RU = {
         "nav.about": "О себе",
         "nav.research": "Исследования",
         "nav.method": "Метод",
@@ -655,6 +699,14 @@
         "nav.journalism": "Журналистика",
         "nav.hire": "Сотрудничество",
         "nav.contact": "Контакты",
+
+        "explore.about": "Полная история",
+        "explore.research": "Все исследования",
+        "explore.fiction": "К прозе и текстам",
+        "explore.builds": "Полное портфолио",
+        "explore.universe": "Войти во вселенную ОРПП",
+        "explore.journalism": "Все тексты",
+        "explore.hire": "Сотрудничать со мной",
 
         "hero.name": "Евгений Лисовский",
         "hero.subtitle": "Исследователь поведения и сознания ИИ &nbsp;•&nbsp; Журналист-расследователь в технологиях &nbsp;•&nbsp; CIO/CTO",
@@ -853,71 +905,12 @@
         "footer.counter": "разумов переступили этот порог"
       };
 
-      var TITLE = {
+      window.TITLE = {
         en: "Eugene Lyssovsky — AI Behavior Researcher, Investigative Technology Writer, CIO/CTO",
         ru: "Евгений Лисовский — исследователь поведения ИИ, журналист-расследователь, CIO/CTO"
       };
-
-      var nodes = document.querySelectorAll('[data-i18n]');
-      // Capture the original English markup once, so EN restore is lossless.
-      nodes.forEach(function (el) { el.setAttribute('data-en', el.innerHTML); });
-
-      var counterValue = null;
-
-      function formatCount(lang) {
-        var el = document.querySelector('[data-count]');
-        if (!el || counterValue === null) return;
-        el.textContent = counterValue.toLocaleString(lang === 'ru' ? 'ru-RU' : 'en-US');
-      }
-
-      function applyLang(lang) {
-        if (lang !== 'ru') lang = 'en';
-        nodes.forEach(function (el) {
-          var key = el.getAttribute('data-i18n');
-          if (lang === 'ru' && RU[key] != null) {
-            el.innerHTML = RU[key];
-          } else {
-            el.innerHTML = el.getAttribute('data-en');
-          }
-        });
-        document.documentElement.lang = lang;
-        document.title = TITLE[lang];
-        document.querySelectorAll('.lang__btn').forEach(function (b) {
-          var on = b.getAttribute('data-lang') === lang;
-          b.classList.toggle('is-active', on);
-          b.setAttribute('aria-pressed', on ? 'true' : 'false');
-        });
-        formatCount(lang);
-        try { localStorage.setItem('lang', lang); } catch (e) {}
-      }
-
-      var saved = 'en';
-      try { saved = localStorage.getItem('lang') || 'en'; } catch (e) {}
-      applyLang(saved);
-
-      document.querySelectorAll('.lang__btn').forEach(function (b) {
-        b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); });
-      });
-
-      // Privacy-friendly visit counter — no cookies, no registration (abacus.jasoncameron.dev).
-      // Fails silently if the API is unreachable; re-formats to the active locale.
-      (function () {
-        var num = document.querySelector('[data-count]');
-        if (!num) return;
-        var wrap = num.closest('.footer__counter');
-        fetch('https://abacus.jasoncameron.dev/hit/lyssovsky-com/site-views')
-          .then(function (r) { return r.json(); })
-          .then(function (d) {
-            if (d && typeof d.value === 'number') {
-              counterValue = d.value;
-              formatCount(document.documentElement.lang);
-              if (wrap) wrap.classList.add('is-visible');
-            }
-          })
-          .catch(function () { /* leave the counter hidden on failure */ });
-      })();
-    })();
   </script>
+  <script src="app.js"></script>
 
 </body>
 </html>
