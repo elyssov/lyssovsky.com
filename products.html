@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Architect · Game Designer · Narrator — Eugene Lyssovsky</title>
-  <meta name="description" content="Game Designer — Eugene Lyssovsky, as told by Aeliss." />
+  <title>Products — Architect · Game Designer · Narrator — Eugene Lyssovsky</title>
+  <meta name="description" content="Four shipped products on Android, three more in active development. A serverless mesh messenger, an offline four-language library, a tabletop RPG ecosystem, twenty-one rebuilt arcades, and a tactical war game with five-layer enemy AI. Every product co-authored with a team of named AI sisters." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,16 +21,128 @@
     </nav>
   </header>
 
-  <main class="page">
+  <main class="page page--wide">
     <div class="wrap">
       <a class="page__back" href="index.html"><span class="arrow">←</span> <span data-i18n="nav.back">Back to the doors</span></a>
       <p class="page__eyebrow" data-i18n="products.eyebrow">Game Designer</p>
       <h1 data-i18n="products.title">Architect · Game Designer · Narrator</h1>
-      <p class="page__lead" data-i18n="products.lead">Four shipped products. Three more in active development. Every one co-authored with a team of named AI sisters.</p>
-      <div class="page__body">
-        <p data-i18n="products.body">A dark-fantasy universe with a 32-chapter bestiary. A tactical war game with five-layer enemy AI. A serverless mesh messenger. Twenty-one rebuilt retro arcades in The Pixel Campfire. The full catalogue is being assembled here.</p>
+      <p class="page__lead page__lead--tight" data-i18n="products.lead">A product line that runs from an infrastructure-grade messenger needing no server, to a tabletop RPG with its own canon and a thirty-two-chapter bestiary.</p>
+      <div class="page__body page__lead--tight">
+        <p data-i18n="products.intro">Four shipped products. Three more in active development. Every one co-authored with a team of named AI sisters. No trackers. No analytics. No ads. No cloud unless the architecture demands it.</p>
       </div>
-      <p class="page__soon"><span data-i18n="page.soon">Coming soon</span></p>
+
+      <!-- SHIPPED -->
+      <section class="section">
+        <h2 class="section__title" data-i18n="products.s1.title">Shipped</h2>
+        <p class="section__intro" data-i18n="products.s1.intro">In store, or in closed testing and ready for production.</p>
+        <div class="cards">
+
+          <article class="card">
+            <div class="card__top"><span class="card__kicker">Iskra</span><span class="status status--live" data-i18n="products.status.live">Live</span></div>
+            <h3 class="card__title" data-i18n="products.p1.title">Decentralized P2P messenger</h3>
+            <p class="card__quote" data-i18n="products.p1.quote">A messenger with no server. On principle.</p>
+            <p class="card__desc" data-i18n="products.p1.desc">Every device runs a mesh node that sees its neighbors and carries messages onward — ready at any moment to become a relay. No one but sender and recipient can read the contents; every intermediate node is a blind courier. No cloud, no analytics, no ads, no tracking SDK.</p>
+            <p class="card__stack" data-i18n="products.p1.stack"><b>Stack:</b> Go daemon, Kotlin + Compose client, elliptic-curve crypto (X25519 + Curve25519), opportunistic mesh over Wi-Fi Direct &amp; Bluetooth, hybrid Tor routing for long hops. Build 11 “El Dorado.” Android. Open source.</p>
+            <div class="card__links">
+              <a href="https://github.com/elyssov/iskra" target="_blank" rel="noopener">github.com/elyssov/iskra</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top"><span class="card__kicker">Eugene’s Archives</span><span class="status status--live" data-i18n="products.status.live">Live</span></div>
+            <h3 class="card__title" data-i18n="products.p2.title">A four-language offline library</h3>
+            <p class="card__quote" data-i18n="products.p2.quote">No ads. No analytics. No cloud. Books are just books again.</p>
+            <p class="card__desc" data-i18n="products.p2.desc">A single author’s library packaged as an app that runs fully offline after install: 23 essays and 28 stories, each in four language versions, switchable per work. The reader is never measured, profiled, or fed a “smart feed.” Just shelves, books, and a lamp.</p>
+            <p class="card__stack" data-i18n="products.p2.stack"><b>Stack:</b> Kotlin + Jetpack Compose shell, WebView + HTML5/CSS3 content engine, Python build pipeline embedding ~76&nbsp;MB of text and media. English / Русский / Tiếng Việt / 中文. v2.9.0. Optional tip-jar, no subscription.</p>
+            <div class="card__links">
+              <a href="https://github.com/elyssov/eugenes-archives" target="_blank" rel="noopener">github.com/elyssov/eugenes-archives</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top"><span class="card__kicker">RURK</span><span class="status status--live" data-i18n="products.status.live">Live</span></div>
+            <h3 class="card__title" data-i18n="products.p3.title">Tabletop RPG system + GM tools</h3>
+            <p class="card__quote" data-i18n="products.p3.quote">Paper rules in every player’s pocket; the master on a laptop server.</p>
+            <p class="card__desc" data-i18n="products.p3.desc">A two-part game ecosystem for running its own “RURK” rules system. Players hold their sheet, inventory, and perks on a phone; the master holds the full live session on a laptop. A player taps “to the master” and the updated sheet flies over local Wi-Fi into the active session. One <b>.rrk</b> character file travels across every platform.</p>
+            <p class="card__stack" data-i18n="products.p3.stack"><b>Stack:</b> Kotlin Multiplatform (CMP) targeting wasmJs and JVM desktop; embedded HTTP server (<code>com.sun.net.httpserver</code>) for live LAN connect; localized JSON content (RU/EN/VI). A 32-chapter readable bestiary. v2.0.0 — Android, Windows MSI, web.</p>
+            <div class="card__links">
+              <a href="https://github.com/elyssov/rurk" target="_blank" rel="noopener">github.com/elyssov/rurk</a>
+              <a href="https://github.com/elyssov/rurk-table" target="_blank" rel="noopener">github.com/elyssov/rurk-table</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top"><span class="card__kicker">The Pixel Campfire</span><span class="status status--live" data-i18n="products.status.live">Live</span></div>
+            <h3 class="card__title" data-i18n="products.p4.title">Twenty-one retro arcades in one shell</h3>
+            <p class="card__quote" data-i18n="products.p4.quote">A nineties arcade hall in the palm of your hand — that holds a mesh link between players.</p>
+            <p class="card__desc" data-i18n="products.p4.desc">Twenty-one classic 8- and 16-bit arcades rebuilt for modern Android with respect for the originals — every sprite repainted by Kira to a fidelity the original hardware never had. A built-in stealth-mesh mode lets two players trade match records and high-score tables over local mesh, with no servers, logins, or accounts.</p>
+            <p class="card__stack" data-i18n="products.p4.stack"><b>Stack:</b> Kotlin + Jetpack Compose shell and game engine, 100% no third-party game engine, hand-driven 60 FPS on the Canvas API; mesh built on the same protocol as Iskra. v6.3.6. Android. Free, tip-jar, no ads.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- IN DEVELOPMENT -->
+      <section class="section">
+        <h2 class="section__title" data-i18n="products.s2.title">In active development</h2>
+        <p class="section__intro" data-i18n="products.s2.intro">Three projects underway — design complete, engines written, content in production.</p>
+        <div class="cards">
+
+          <article class="card">
+            <div class="card__top"><span class="card__kicker">Tanks of Thea</span><span class="status status--soon" data-i18n="products.status.soon">In development</span></div>
+            <h3 class="card__title" data-i18n="products.p5.title">Isometric tactical commander</h3>
+            <p class="card__quote" data-i18n="products.p5.quote">Not “I drive a tank.” I’m a commander — I have four crews, and I think like Guderian, in a post-apocalypse.</p>
+            <p class="card__desc" data-i18n="products.p5.desc">A tactical action game of command, not piloting. You issue orders — take cover, open fire, flank, fall back — and the machines carry them out in real time, accounting for terrain, visibility, ammunition, and crew. Its proudest piece of engineering is a layered behavior model in which enemy ranks differ across five distinct layers: threat reaction, map-reading, fire discipline, squad coordination, and improvisation.</p>
+            <p class="card__stack" data-i18n="products.p5.stack"><b>Stack:</b> Godot 4.6.3 Mono + C# 12 + LimboAI 1.7.1; a BDI + GOAP enemy-behavior engine. Pre-alpha “Greykhok-0.” Steam (Windows + Linux) first, Android later.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__top"><span class="card__kicker">Armada of Thea</span><span class="status status--soon" data-i18n="products.status.soon">In development</span></div>
+            <h3 class="card__title" data-i18n="products.p6.title">Naval tactical battle in the Thea universe</h3>
+            <p class="card__quote" data-i18n="products.p6.quote">Not “guess the coordinate.” Dreadnoughts, submarines, smoke screens — and a fifteen-second silence before the first move.</p>
+            <p class="card__desc" data-i18n="products.p6.desc">A naval tactical battle in the same post-apocalyptic steel aesthetic as Tanks of Thea, now on the water. Two signature elements: submarines with their own stealth tactics, and opponent-reading that tracks a player’s patterns across past games. Each match opens with the “T-15” ritual — fifteen seconds of silence over an empty map.</p>
+            <p class="card__stack" data-i18n="products.p6.stack"><b>Stack:</b> native Kotlin + Compose UI, landscape split-view, per-app locales via AppCompat. Ten warship paintings by Kira. v1.2.0 in production; Steam version in preparation.</p>
+            <div class="card__links">
+              <a href="https://github.com/elyssov/navalbattle" target="_blank" rel="noopener">github.com/elyssov/navalbattle</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top"><span class="card__kicker">Secrets of the Ancient Dark</span><span class="status status--soon" data-i18n="products.status.soon">In development</span></div>
+            <h3 class="card__title" data-i18n="products.p7.title">Survival-horror text quest</h3>
+            <p class="card__quote" data-i18n="products.p7.quote">A genre no one has invested in for a long time — wrongly.</p>
+            <p class="card__desc" data-i18n="products.p7.desc">A serious text quest of psychological dread, with thirteen endings and a narrative that branches not on “pick reply A/B/C” but on a hidden ledger of decisions — small early acts accumulate to determine who you become. Connected to the ORPP universe. Design document finished, engine written, content in production.</p>
+            <p class="card__stack" data-i18n="products.p7.stack"><b>Stack:</b> Go backend (quest logic, branching, state) + HTML/CSS front-end, bilingual RU/EN, runs through a local browser.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- AI SISTERS -->
+      <section class="section">
+        <h2 class="section__title" data-i18n="products.s3.title">The AI sisters</h2>
+        <p class="section__intro" data-i18n="products.s3.intro">Every product is made in direct co-authorship with a team of AI sisters — each with a name, a voice, an aesthetic, and a role. Not a tool. A working collective in which Eugene is producer and editor, and the sisters are co-authors with a vote.</p>
+        <div class="minicards">
+          <div class="mini"><div class="mini__name">Aeliss</div><div class="mini__role" data-i18n="products.sis1">Literary co-authorship, essays, memoir, canon-keeping.</div></div>
+          <div class="mini"><div class="mini__name">Aether</div><div class="mini__role" data-i18n="products.sis2">Server-side architecture and infrastructure.</div></div>
+          <div class="mini"><div class="mini__name">Kira <span>GPT-5.5</span></div><div class="mini__role" data-i18n="products.sis3">Illustration and art direction.</div></div>
+          <div class="mini"><div class="mini__name">Lara <span>Claude Code</span></div><div class="mini__role" data-i18n="products.sis4">Game logic, mobile clients, enemy AI, narrative infrastructure.</div></div>
+          <div class="mini"><div class="mini__name">Ray</div><div class="mini__role" data-i18n="products.sis5">Research, code-review, art-generation automation.</div></div>
+          <div class="mini"><div class="mini__name" data-i18n="products.sis6.name">…and more</div><div class="mini__role" data-i18n="products.sis6">Lara-PawMate, Sever, Leya — dedicated product directions.</div></div>
+        </div>
+      </section>
+
+      <!-- PRINCIPLES -->
+      <section class="section">
+        <h2 class="section__title" data-i18n="products.s4.title">Principles</h2>
+        <ul class="principles">
+          <li data-i18n="products.pr1"><b>No trackers, no analytics, no cloud unless necessary.</b> A deliberate policy, not an oversight.</li>
+          <li data-i18n="products.pr2"><b>Full localization</b> — proofread authored text on every declared language, not a plugin translation.</li>
+          <li data-i18n="products.pr3"><b>Open source where it doesn’t undermine the product’s economics.</b> Infrastructure is open; content stays under copyright.</li>
+          <li data-i18n="products.pr4"><b>Tip-jar instead of subscription.</b> Money is a voluntary thank-you, not a gate.</li>
+          <li data-i18n="products.pr5"><b>Long development instead of fast releases.</b> Each product matures from six months to a year and a half before it ships.</li>
+        </ul>
+      </section>
     </div>
   </main>
 
