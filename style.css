@@ -89,23 +89,28 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
    ========================================================================= */
 .hero {
   position: relative;
-  padding: 96px 0 84px;
   overflow: hidden;
   border-bottom: 1px solid rgba(42,37,29,.55);
 }
-.hero__bg {
-  position: absolute; inset: 0; z-index: 0;
-  background-image: url("images/lyssovsky-hero.png");
-  background-size: cover; background-position: center 28%;
-  opacity: .26;
+.hero__media { position: absolute; inset: 0; z-index: 0; }
+.hero__media img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 36%;
 }
-.hero__bg::after {
-  content: ""; position: absolute; inset: 0;
+.hero__scrim {
+  position: absolute; inset: 0; z-index: 1;
   background:
-    radial-gradient(120% 80% at 70% 20%, transparent 0%, var(--bg) 78%),
-    linear-gradient(180deg, rgba(15,14,12,.4) 0%, var(--bg) 96%);
+    linear-gradient(90deg, rgba(12,11,9,.93) 0%, rgba(12,11,9,.58) 46%, rgba(12,11,9,.12) 100%),
+    linear-gradient(180deg, rgba(12,11,9,.32) 0%, rgba(12,11,9,.18) 38%, rgba(12,11,9,.9) 100%);
 }
-.hero__inner { position: relative; z-index: 1; max-width: 760px; }
+.hero .wrap { position: relative; z-index: 2; }
+.hero__inner {
+  max-width: 720px;
+  min-height: clamp(500px, 82vh, 760px);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 124px 0 76px;
+  text-shadow: 0 2px 26px rgba(0,0,0,.55);
+}
 .hero__kicker {
   font-family: var(--serif); font-style: italic;
   color: var(--gold); font-size: 17px; letter-spacing: .04em;
@@ -155,34 +160,51 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
   background: var(--card);
   border: 1px solid var(--card-edge);
   border-radius: 14px;
-  padding: 32px 30px 30px;
   overflow: hidden;
   transition: transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
-  min-height: 340px;
 }
 .portal::before {
-  content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%;
+  content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; z-index: 3;
   background: linear-gradient(90deg, var(--gold), transparent 70%);
-  opacity: .8; transition: opacity .4s var(--ease);
+  opacity: .85; transition: opacity .4s var(--ease);
 }
-/* faint Kira artwork behind selected portals */
-.portal__art {
-  position: absolute; inset: 0; z-index: 0;
-  background-size: cover; background-position: center;
-  opacity: .10; transition: opacity .5s var(--ease);
-  pointer-events: none;
+
+/* visible Kira artwork — real <img> banner at the top of the card */
+.portal__media {
+  position: relative; height: 168px; overflow: hidden;
+  background: #0c0b09; border-bottom: 1px solid var(--card-edge);
 }
-.portal--research .portal__art { background-image: url("images/lyssovsky-research.png"); }
-.portal--writer   .portal__art { background-image: url("images/lyssovsky-two-voice-method.png"); }
-.portal--journal  .portal__art { background-image: url("images/lyssovsky-journalism.png"); }
-.portal > * { position: relative; z-index: 1; }
+.portal__media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .6s var(--ease);
+}
+.portal__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(26,23,19,.9) 100%);
+}
+.portal--lead .portal__media img { object-position: 50% 28%; }
+
+/* typographic plate for the two cards without dedicated artwork */
+.portal__media--plate {
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(130% 120% at 28% 18%, rgba(212,165,71,.20), transparent 62%),
+    linear-gradient(135deg, #211a10, #14110d);
+}
+.portal__media--plate span {
+  font-family: var(--serif); font-style: italic;
+  font-size: 27px; letter-spacing: .04em; color: rgba(212,165,71,.6);
+  position: relative; z-index: 1;
+}
+
+.portal__pad { display: flex; flex-direction: column; flex: 1; padding: 26px 30px 30px; }
 
 .portal:hover {
   transform: translateY(-6px);
   border-color: rgba(212,165,71,.5);
   box-shadow: 0 18px 48px -24px rgba(0,0,0,.9);
 }
-.portal:hover .portal__art { opacity: .18; }
+.portal:hover .portal__media img { transform: scale(1.06); }
 .portal:hover::before { opacity: 1; }
 
 .portal__num {
@@ -244,11 +266,11 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
   position: absolute; inset: 0; z-index: 0;
   background-image: url("images/lyssovsky-footer-texture.png");
   background-size: cover; background-position: center;
-  opacity: .14;
+  opacity: .32;
 }
 .footer__bg::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, var(--bg) 0%, rgba(15,14,12,.6) 40%, var(--bg) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(15,14,12,.45) 42%, rgba(15,14,12,.85) 100%);
 }
 .footer > * { position: relative; z-index: 1; }
 .footer__quote {
@@ -309,11 +331,15 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
   .topbar { padding: 14px 18px; }
   .topbar__brand { font-size: 13px; letter-spacing: .1em; }
   .wrap { padding: 0 18px; }
-  .hero { padding: 64px 0 56px; }
-  .hero__bg { background-position: center 20%; opacity: .2; }
+  .hero__media img { object-position: 50% 30%; }
+  .hero__inner { min-height: clamp(440px, 76vh, 600px); padding: 96px 0 52px; }
+  .hero__scrim {
+    background: linear-gradient(180deg, rgba(12,11,9,.34) 0%, rgba(12,11,9,.55) 45%, rgba(12,11,9,.94) 100%);
+  }
   .portals { padding: 56px 0 24px; }
   .portal-grid { grid-template-columns: 1fr; gap: 16px; }
-  .portal { min-height: 0; padding: 28px 24px; }
+  .portal__media { height: 190px; }
+  .portal__pad { padding: 26px 24px 28px; }
   .contact { padding: 60px 0 70px; }
   .footer { padding: 56px 0 40px; }
 }
