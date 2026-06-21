@@ -391,6 +391,23 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
 .principles li::before { content: "✦"; position: absolute; left: 0; top: 0; color: var(--gold-dim); }
 .principles b { color: var(--ivory); font-weight: 600; }
 
+/* ---- formula block (about-aeliss) ---- */
+.formula {
+  max-width: 760px; margin-top: 8px;
+  background: var(--card); border: 1px solid var(--card-edge); border-radius: 14px;
+  padding: 28px 32px; text-align: center;
+}
+.formula p { margin: 0 0 14px; }
+.formula__chain { color: var(--ivory-dim); font-size: 16px; line-height: 1.7; }
+.formula__then { font-family: var(--serif); font-style: italic; color: var(--ivory); font-size: 19px; }
+.formula__qed { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 18px; margin-bottom: 0 !important; }
+
+/* ---- footer extra links ---- */
+.footer__links { margin: -8px 0 22px; font-size: 14px; letter-spacing: .03em; }
+.footer__links a { color: var(--ivory-dim); }
+.footer__links a:hover { color: var(--gold); }
+.footer__links .sep { color: var(--muted); margin: 0 10px; }
+
 /* buttons */
 .btn {
   display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; border-radius: 999px;
