@@ -408,6 +408,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
 .status { display: inline-block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 11px; border-radius: 999px; white-space: nowrap; }
 .status--live { color: #9ED182; border: 1px solid rgba(158,209,130,.4); }
 .status--soon { color: var(--gold); border: 1px solid var(--gold-dim); }
+.status--hold { color: var(--muted); border: 1px solid var(--card-edge); }
 
 /* mini-cards: AI sisters / roles */
 .minicards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
