@@ -127,6 +127,12 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
   font-size: clamp(16px, 2.4vw, 20px);
   max-width: 620px; margin: 0 0 32px; line-height: 1.5;
 }
+.hero__sub-link {
+  color: var(--gold); font-style: normal;
+  border-bottom: 1px solid rgba(212,165,71,.45);
+  transition: color .25s var(--ease), border-color .25s var(--ease);
+}
+.hero__sub-link:hover { color: var(--ivory); border-bottom-color: var(--ivory); }
 .hero__body p { margin: 0 0 20px; color: var(--ivory); max-width: 660px; }
 .hero__body p:last-child { margin-bottom: 0; }
 .hero__body em { color: var(--gold); font-style: italic; }
