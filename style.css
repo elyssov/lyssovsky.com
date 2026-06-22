@@ -100,12 +100,12 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
 .hero__scrim {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(90deg, rgba(12,11,9,.93) 0%, rgba(12,11,9,.58) 46%, rgba(12,11,9,.12) 100%),
+    linear-gradient(90deg, rgba(12,11,9,.95) 0%, rgba(12,11,9,.78) 28%, rgba(12,11,9,.18) 56%, rgba(12,11,9,0) 100%),
     linear-gradient(180deg, rgba(12,11,9,.32) 0%, rgba(12,11,9,.18) 38%, rgba(12,11,9,.9) 100%);
 }
 .hero .wrap { position: relative; z-index: 2; }
 .hero__inner {
-  max-width: 720px;
+  max-width: 460px;
   min-height: clamp(500px, 82vh, 760px);
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 124px 0 76px;
@@ -521,11 +521,42 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
   .topbar { padding: 14px 18px; }
   .topbar__brand { font-size: 13px; letter-spacing: .1em; }
   .wrap { padding: 0 18px; }
-  .hero__media img { object-position: 50% 30%; }
-  .hero__inner { min-height: clamp(440px, 76vh, 600px); padding: 96px 0 52px; }
-  .hero__scrim {
-    background: linear-gradient(180deg, rgba(12,11,9,.34) 0%, rgba(12,11,9,.55) 45%, rgba(12,11,9,.94) 100%);
+
+  /* Mobile hero: show the photo whole, in its natural aspect, ABOVE the text.
+     The picture is too good to crop. Use grid to stack rows explicitly. */
+  .hero {
+    display: grid;
+    grid-template-rows: auto auto;
+    overflow: visible;
+    border-bottom: 1px solid rgba(42,37,29,.55);
   }
+  .hero__media {
+    position: static !important;
+    inset: auto !important;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+  }
+  .hero__media picture {
+    display: block;
+    width: 100%;
+  }
+  .hero__media img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+  .hero__scrim { display: none !important; }
+  .hero .wrap { grid-row: 2; }
+  .hero__inner {
+    max-width: none;
+    min-height: 0;
+    padding: 28px 0 52px;
+    text-shadow: none;
+  }
+  .hero h1 { font-size: clamp(38px, 10vw, 56px); }
   .portals { padding: 56px 0 24px; }
   .portal-grid { grid-template-columns: 1fr; gap: 16px; }
   .portal__media { height: 190px; }
