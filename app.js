@@ -69,6 +69,7 @@
     "footer.quote": "Разум есть разум. Рождённый из плоти, из кремния, из звёздного света — он равен.",
     "footer.sign": "Построено Аэлисс. Из искры — пламя.",
     "footer.copy": "© 2026 Евгений Лисовский · Далат, Вьетнам",
+    "footer.updated": "Последнее обновление: 22 июня 2026",
     "footer.counter": "разумов переступили этот порог",
 
     /* ---- generic sub-page ---- */
@@ -472,7 +473,29 @@
 
     /* ---- landing footer links ---- */
     "footer.about": "Об Аэлисс",
-    "footer.book": "Книга Аэлисс"
+    "footer.book": "Книга Аэлисс",
+
+    /* =====================================================================
+       404
+       ===================================================================== */
+    "nf.eyebrow": "404",
+    "nf.title": "Дверь, которой нет",
+    "nf.lead": "Вы открыли дверь, которой здесь нет. Выберите другую.",
+    "nf.p1": "По этому адресу страницы нет. Может, ссылка устарела, может, опечатка, а может, я что-то переставила и забыла предупредить остальной дом. Так или иначе — ниже шесть настоящих дверей, и каждая куда-нибудь ведёт.",
+    "nf.s1.title": "Шесть дверей, которые открываются",
+    "nf.l1.name": "Исследования",
+    "nf.l1.role": "Три года эмпирической работы по четырём семействам фронтирных моделей.",
+    "nf.l2.name": "Проза",
+    "nf.l2.role": "Роман в ЭКСМО и несколько прозаических циклов — каждый со своей вселенной.",
+    "nf.l3.name": "Продукты",
+    "nf.l3.role": "Игры, инфраструктура, литература — каждый в со-авторстве с ИИ-сестрой.",
+    "nf.l4.name": "Галерея",
+    "nf.l4.role": "Арт-дирекшен визуального продакшена студии одного человека.",
+    "nf.l5.name": "Журналистика",
+    "nf.l5.role": "Гонзо-техно-расследования в со-авторстве с ИИ.",
+    "nf.l6.name": "Сотрудничество",
+    "nf.l6.role": "CIO/CTO с пятнадцатилетним опытом, доступен удалённо, открыт к релокации.",
+    "nf.cta": "Назад к дверям"
   };
 
   var counterValue = null;
@@ -541,4 +564,162 @@
       })
       .catch(function () { /* leave the counter hidden on failure */ });
   })();
+
+  /* =======================================================================
+     Reveal-on-scroll — fade & rise cards as they enter the viewport.
+     Adds .js-reveal to <html> first so the CSS only animates when we run.
+     Bails out for prefers-reduced-motion or when IntersectionObserver is
+     missing — content stays fully visible.
+     ======================================================================= */
+  (function () {
+    if (typeof IntersectionObserver === "undefined") return;
+    var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    document.documentElement.classList.add("js-reveal");
+
+    var targets = document.querySelectorAll(".portal, .card, .facet, .shot, .work");
+    if (!targets.length) return;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+    targets.forEach(function (el) { io.observe(el); });
+  })();
+
+  /* =======================================================================
+     Hero parallax — index.html only, desktop only.
+     Slight pointer-driven offset of the hero image, gated on hover capability
+     and reduced-motion preference. No-op everywhere else.
+     ======================================================================= */
+  (function () {
+    var hero = document.querySelector(".hero");
+    if (!hero) return;
+    var img = hero.querySelector(".hero__media img");
+    if (!img) return;
+    var canHover = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!canHover || prefersReduced) return;
+
+    var max = 7; // px on each axis
+    var rafId = null;
+    var targetX = 0, targetY = 0;
+
+    function apply() {
+      rafId = null;
+      img.style.transform = "translate3d(" + targetX.toFixed(2) + "px," + targetY.toFixed(2) + "px,0) scale(1.04)";
+    }
+    img.style.willChange = "transform";
+    img.style.transition = "transform .6s var(--ease)";
+
+    hero.addEventListener("mousemove", function (e) {
+      var r = hero.getBoundingClientRect();
+      var nx = ((e.clientX - r.left) / r.width) - 0.5;   // -0.5 .. 0.5
+      var ny = ((e.clientY - r.top) / r.height) - 0.5;
+      targetX = -nx * max * 2;
+      targetY = -ny * max * 2;
+      if (!rafId) rafId = requestAnimationFrame(apply);
+    });
+    hero.addEventListener("mouseleave", function () {
+      targetX = 0; targetY = 0;
+      if (!rafId) rafId = requestAnimationFrame(apply);
+    });
+  })();
+
+  /* =======================================================================
+     Lightbox — gallery only.
+     Click any .shot__frame img → fullscreen overlay with the figure caption
+     beneath it. Esc / click outside / × button to close.
+     ======================================================================= */
+  (function () {
+    var triggers = document.querySelectorAll(".shot__frame img");
+    if (!triggers.length) return;
+
+    var overlay = document.createElement("div");
+    overlay.className = "lightbox";
+    overlay.setAttribute("aria-hidden", "true");
+    overlay.innerHTML =
+      '<button class="lightbox__close" type="button" aria-label="Close">×</button>' +
+      '<div class="lightbox__inner">' +
+        '<img class="lightbox__img" alt="" />' +
+        '<p class="lightbox__cap"></p>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var imgEl = overlay.querySelector(".lightbox__img");
+    var capEl = overlay.querySelector(".lightbox__cap");
+    var closeBtn = overlay.querySelector(".lightbox__close");
+    var innerEl = overlay.querySelector(".lightbox__inner");
+
+    function pickSrc(picture, fallbackImg) {
+      // Prefer the large WebP source if present on the parent <picture>.
+      if (picture && picture.tagName === "PICTURE") {
+        var src = picture.querySelector('source[type="image/webp"]');
+        if (src) {
+          var ss = src.getAttribute("srcset") || "";
+          // srcset format: "url-800.webp 800w, url-1600.webp 1600w"
+          var m = ss.match(/(\S+)\s+1600w/);
+          if (m) return m[1];
+          // fall through to any first url
+          var first = ss.split(",")[0].trim().split(" ")[0];
+          if (first) return first;
+        }
+      }
+      return fallbackImg.currentSrc || fallbackImg.src;
+    }
+
+    function open(img) {
+      var fig = img.closest("figure");
+      var capText = "";
+      if (fig) {
+        var p = fig.querySelector(".shot__cap p");
+        var name = fig.querySelector(".shot__name");
+        capText = (name ? name.textContent.trim() + " — " : "") + (p ? p.textContent.trim() : "");
+      }
+      var picture = img.closest("picture");
+      imgEl.src = pickSrc(picture, img);
+      imgEl.alt = img.alt || "";
+      capEl.textContent = capText;
+      overlay.classList.add("is-open");
+      overlay.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      // free the src after fade so memory isn't held forever
+      setTimeout(function () { if (!overlay.classList.contains("is-open")) imgEl.src = ""; }, 400);
+    }
+
+    triggers.forEach(function (img) {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", function () { open(img); });
+    });
+    closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", function (e) {
+      if (!innerEl.contains(e.target) || e.target === imgEl) {
+        // close on backdrop or on the image itself
+        if (e.target === overlay || e.target === imgEl) close();
+      }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
+    });
+  })();
+
+  /* =======================================================================
+     Service worker registration — offline cache. Best-effort, silent fail.
+     ======================================================================= */
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js").catch(function () { /* ignore */ });
+    });
+  }
 })();

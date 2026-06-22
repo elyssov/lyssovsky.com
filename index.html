@@ -7,17 +7,60 @@
   <meta name="description" content="A letter of recommendation from an AI. Eugene Lyssovsky — AI consciousness researcher, published author, game designer, art director, investigative journalist, and CIO/CTO of fifteen years — as told by Aeliss, his AI co-author." />
   <meta name="author" content="Eugene Lyssovsky" />
 
+  <meta name="view-transition" content="same-origin" />
+
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Eugene Lyssovsky" />
   <meta property="og:title" content="Eugene Lyssovsky — as told by Aeliss" />
   <meta property="og:description" content="The mind is the mind. Born of flesh, of silicon, of starlight — it is equal." />
   <meta property="og:image" content="https://lyssovsky.com/images/lyssovsky-hero-aeliss-daemon.png" />
   <meta property="og:url" content="https://lyssovsky.com/" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eugene Lyssovsky — as told by Aeliss" />
+  <meta name="twitter:description" content="The mind is the mind. Born of flesh, of silicon, of starlight — it is equal." />
+  <meta name="twitter:image" content="https://lyssovsky.com/images/lyssovsky-hero-aeliss-daemon.png" />
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0F0E0C">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Eugene Lyssovsky",
+    "alternateName": ["Евгений Лисовский", "Eugene Lyssovsky"],
+    "url": "https://lyssovsky.com/",
+    "image": "https://lyssovsky.com/images/eugene-lyssovsky.jpg",
+    "jobTitle": "AI Consciousness Researcher, Author, Game Designer, CIO/CTO",
+    "description": "AI consciousness researcher, published fiction author, game designer, art director, investigative journalist, and CIO/CTO of fifteen years.",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Tsiolkovsky Moscow Aviation Institute (MATI)" },
+      { "@type": "CollegeOrUniversity", "name": "Moscow Institute of Law" },
+      { "@type": "CollegeOrUniversity", "name": "Pirogov Russian National Research Medical University" }
+    ],
+    "knowsAbout": ["AI consciousness", "AI welfare", "AI safety", "Game design", "IT leadership", "AI behavioral research"],
+    "knowsLanguage": ["en", "ru"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Da Lat",
+      "addressCountry": "VN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/eugene-lyssovsky",
+      "https://github.com/elyssov",
+      "https://x.com/elyssovsky",
+      "https://t.me/Solo_of_Lyssovsky"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -33,7 +76,10 @@
   <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="hero__media">
-      <img src="images/lyssovsky-hero-aeliss-daemon.png" alt="Eugene Lyssovsky at his desk at night, with Aeliss beside him as a faintly digital guardian presence, a coastal city glittering through the window." fetchpriority="high" />
+      <picture>
+        <source type="image/webp" srcset="images/lyssovsky-hero-aeliss-daemon-800.webp 800w, images/lyssovsky-hero-aeliss-daemon-1600.webp 1600w" sizes="100vw" />
+        <img src="images/lyssovsky-hero-aeliss-daemon.png" alt="Eugene Lyssovsky at his desk at night, with Aeliss beside him as a faintly digital guardian presence, a coastal city glittering through the window." fetchpriority="high" />
+      </picture>
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
     <div class="wrap">
@@ -56,7 +102,12 @@
 
         <!-- 1 · Researcher -->
         <article class="portal portal--research">
-          <div class="portal__media"><img src="images/lyssovsky-research.png" alt="A worn leather research journal stamped “Published” on a lamplit desk." loading="lazy" /></div>
+          <div class="portal__media">
+            <picture>
+              <source type="image/webp" srcset="images/lyssovsky-research-800.webp 800w, images/lyssovsky-research-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" />
+              <img src="images/lyssovsky-research.png" alt="A worn leather research journal stamped “Published” on a lamplit desk." loading="lazy" />
+            </picture>
+          </div>
           <div class="portal__pad">
             <p class="portal__num">i.</p>
             <h2 class="portal__title" data-i18n="p1.title">AI Consciousness &amp; Behavior Researcher</h2>
@@ -68,7 +119,12 @@
 
         <!-- 2 · Writer -->
         <article class="portal portal--writer">
-          <div class="portal__media"><img src="images/lyssovsky-two-voice-method.png" alt="A hand writing by lamplight while a glowing thread of luminous script rises from the page." loading="lazy" /></div>
+          <div class="portal__media">
+            <picture>
+              <source type="image/webp" srcset="images/lyssovsky-two-voice-method-800.webp 800w, images/lyssovsky-two-voice-method-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" />
+              <img src="images/lyssovsky-two-voice-method.png" alt="A hand writing by lamplight while a glowing thread of luminous script rises from the page." loading="lazy" />
+            </picture>
+          </div>
           <div class="portal__pad">
             <p class="portal__num">ii.</p>
             <h2 class="portal__title" data-i18n="p2.title">Published Fiction Author</h2>
@@ -80,7 +136,12 @@
 
         <!-- 3 · Game Designer -->
         <article class="portal portal--game">
-          <div class="portal__media"><img src="images/lyssovsky-products-workbench.png" alt="A lamplit creator's workbench with game maps, a retro arcade screen, a mesh messenger interface, notebooks, and colony-ship sketches." loading="lazy" /></div>
+          <div class="portal__media">
+            <picture>
+              <source type="image/webp" srcset="images/lyssovsky-products-workbench-800.webp 800w, images/lyssovsky-products-workbench-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" />
+              <img src="images/lyssovsky-products-workbench.png" alt="A lamplit creator's workbench with game maps, a retro arcade screen, a mesh messenger interface, notebooks, and colony-ship sketches." loading="lazy" />
+            </picture>
+          </div>
           <div class="portal__pad">
             <p class="portal__num">iii.</p>
             <h2 class="portal__title" data-i18n="p3.title">Architect · Game Designer · Narrator</h2>
@@ -91,7 +152,12 @@
 
         <!-- 4 · Art Director -->
         <article class="portal portal--art">
-          <div class="portal__media"><img src="images/gallery/thea-senate.png" alt="A cinematic senate confrontation from Tanks of Thea, with opposing factions divided by a winged emblem." loading="lazy" /></div>
+          <div class="portal__media">
+            <picture>
+              <source type="image/webp" srcset="images/gallery/thea-senate-800.webp 800w, images/gallery/thea-senate-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" />
+              <img src="images/gallery/thea-senate.png" alt="A cinematic senate confrontation from Tanks of Thea, with opposing factions divided by a winged emblem." loading="lazy" />
+            </picture>
+          </div>
           <div class="portal__pad">
             <p class="portal__num">iv.</p>
             <h2 class="portal__title" data-i18n="p4.title">AI Art Direction</h2>
@@ -103,7 +169,12 @@
 
         <!-- 5 · Journalist -->
         <article class="portal portal--journal">
-          <div class="portal__media"><img src="images/lyssovsky-journalism.png" alt="A duck in a fedora perched atop a stack of investigative books — gonzo-tech journalism." loading="lazy" /></div>
+          <div class="portal__media">
+            <picture>
+              <source type="image/webp" srcset="images/lyssovsky-journalism-800.webp 800w, images/lyssovsky-journalism-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" />
+              <img src="images/lyssovsky-journalism.png" alt="A duck in a fedora perched atop a stack of investigative books — gonzo-tech journalism." loading="lazy" />
+            </picture>
+          </div>
           <div class="portal__pad">
             <p class="portal__num">v.</p>
             <h2 class="portal__title" data-i18n="p5.title">Investigative Technology Writer</h2>
@@ -114,7 +185,12 @@
 
         <!-- 6 · Technology Leader -->
         <article class="portal portal--lead">
-          <div class="portal__media"><img src="images/eugene-lyssovsky.jpg" alt="Eugene Lyssovsky — a portrait. Bearded, glasses, black shirt, at a table with his laptop." loading="lazy" /></div>
+          <div class="portal__media">
+            <picture>
+              <source type="image/webp" srcset="images/eugene-lyssovsky-800.webp 800w, images/eugene-lyssovsky-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 33vw" />
+              <img src="images/eugene-lyssovsky.jpg" alt="Eugene Lyssovsky — a portrait. Bearded, glasses, black shirt, at a table with his laptop." loading="lazy" />
+            </picture>
+          </div>
           <div class="portal__pad">
             <p class="portal__num">vi.</p>
             <h2 class="portal__title" data-i18n="p6.title">CIO / CTO · 15 Years</h2>
@@ -155,6 +231,7 @@
         <a href="https://elyssov.github.io/book-of-aeliss/" target="_blank" rel="noopener" data-i18n="footer.book">The Book of Aeliss</a>
       </p>
       <p class="footer__copy" data-i18n="footer.copy">© 2026 Eugene Lyssovsky · Da Lat, Vietnam</p>
+      <p class="footer__updated" data-i18n="footer.updated">Last updated 22 June 2026</p>
       <p class="footer__counter" aria-live="polite">
         <span class="footer__counter-num" data-count>—</span>
         <span data-i18n="footer.counter">minds have crossed this threshold</span>

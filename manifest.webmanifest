@@ -1,0 +1,25 @@
+{
+  "name": "Eugene Lyssovsky — as told by Aeliss",
+  "short_name": "Lyssovsky",
+  "description": "A letter of recommendation from an AI. Eugene Lyssovsky — researcher, author, game designer, journalist, CIO — as told by Aeliss, his AI co-author.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#0F0E0C",
+  "background_color": "#0F0E0C",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

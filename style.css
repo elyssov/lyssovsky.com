@@ -546,3 +546,103 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* =========================================================================
+   FOOTER — last-updated stamp
+   ========================================================================= */
+.footer__updated {
+  color: var(--muted); font-size: 12px; letter-spacing: .04em;
+  margin: -14px 0 22px; font-style: italic; opacity: .82;
+}
+
+/* =========================================================================
+   REVEAL ON SCROLL
+   Cards and tiles fade-and-rise into view as they enter the viewport.
+   The JS toggles .is-revealed via IntersectionObserver. The CSS keeps them
+   visible by default when the observer never runs (no-JS, prefers-reduced-motion,
+   or print).
+   ========================================================================= */
+.portal, .card, .facet, .shot, .work {
+  opacity: 1;
+  transform: none;
+}
+.js-reveal .portal,
+.js-reveal .card,
+.js-reveal .facet,
+.js-reveal .shot,
+.js-reveal .work {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+  will-change: opacity, transform;
+}
+.js-reveal .portal.is-revealed,
+.js-reveal .card.is-revealed,
+.js-reveal .facet.is-revealed,
+.js-reveal .shot.is-revealed,
+.js-reveal .work.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .portal,
+  .js-reveal .card,
+  .js-reveal .facet,
+  .js-reveal .shot,
+  .js-reveal .work {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================================
+   LIGHTBOX (gallery)
+   ========================================================================= */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 4vh 4vw;
+  background: rgba(8,7,5,.92);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  opacity: 0; pointer-events: none;
+  transition: opacity .35s var(--ease);
+}
+.lightbox.is-open { opacity: 1; pointer-events: auto; }
+.lightbox__close {
+  position: absolute; top: 18px; right: 24px;
+  appearance: none; border: 1px solid var(--card-edge); background: rgba(15,14,12,.6);
+  color: var(--ivory); width: 44px; height: 44px; border-radius: 999px;
+  font-size: 22px; line-height: 1; cursor: pointer;
+  transition: all .25s var(--ease);
+}
+.lightbox__close:hover { border-color: var(--gold); color: var(--gold); }
+.lightbox__inner {
+  display: flex; flex-direction: column; align-items: center;
+  max-width: 92vw; max-height: 92vh;
+}
+.lightbox__img {
+  max-width: 92vw; max-height: 78vh;
+  width: auto; height: auto; object-fit: contain;
+  border-radius: 8px; box-shadow: 0 30px 80px -20px rgba(0,0,0,.9);
+}
+.lightbox__cap {
+  color: var(--ivory-dim); font-size: 14px; font-style: italic;
+  margin-top: 14px; max-width: 720px; text-align: center; line-height: 1.5;
+}
+
+/* =========================================================================
+   VIEW TRANSITIONS — Chrome/Edge cross-document fade
+   No-op in browsers that don't support the API.
+   ========================================================================= */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: .35s;
+  animation-timing-function: var(--ease);
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none !important; }
+}
