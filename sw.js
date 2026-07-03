@@ -4,7 +4,7 @@
    and feels instant on repeat visits. The cache name bumps with each change
    so old assets are evicted on activation.
    ========================================================================= */
-const CACHE = "lyssovsky-v1-2026-06-22";
+const CACHE = "lyssovsky-v2-2026-07-03";
 
 const PRECACHE = [
   "/",
@@ -13,6 +13,7 @@ const PRECACHE = [
   "/about-aeliss.html",
   "/hire.html",
   "/gallery.html",
+  "/moad.html",
   "/journalism.html",
   "/products.html",
   "/research.html",

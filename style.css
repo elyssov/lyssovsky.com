@@ -309,7 +309,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
   min-height: 60vh;
 }
 .page__back {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; gap: 8px; width: fit-content;
   font-size: 14px; font-weight: 600; letter-spacing: .04em; color: var(--ivory-dim);
   margin-bottom: 40px;
 }
@@ -526,6 +526,23 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
   .topbar { padding: 14px 18px; }
   .topbar__brand { font-size: 13px; letter-spacing: .1em; }
   .wrap { padding: 0 18px; }
+  .page h1,
+  .page__lead,
+  .page__body,
+  .section__intro,
+  .card__desc,
+  .shot__cap p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .page h1 { font-size: clamp(36px, 12vw, 52px); }
+  .topbar { gap: 12px; }
+  .topbar__brand {
+    max-width: calc(100vw - 132px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
   /* Mobile hero: show the photo whole, in its natural aspect, ABOVE the text.
      The picture is too good to crop. Use grid to stack rows explicitly. */
