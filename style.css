@@ -141,6 +141,22 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
 .hero__body p { margin: 0 0 20px; color: var(--ivory); max-width: 660px; }
 .hero__body p:last-child { margin-bottom: 0; }
 .hero__body em { color: var(--gold); font-style: italic; }
+.hero__status {
+  margin-top: 18px; margin-bottom: 4px;
+}
+.hero__status a {
+  display: inline-block; padding: 6px 18px; border-radius: 4px;
+  background: var(--gold); color: var(--bg); font-family: var(--sans);
+  font-size: 14px; font-weight: 600; letter-spacing: .03em;
+  text-decoration: none; text-transform: uppercase;
+}
+.hero__status a:hover { background: #E8BA5A; }
+.page__status {
+  display: inline-block; padding: 5px 14px; border-radius: 4px;
+  background: var(--gold); color: var(--bg); font-family: var(--sans);
+  font-size: 13px; font-weight: 600; letter-spacing: .03em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
 .hero__cta {
   font-family: var(--serif); font-style: italic; font-size: 22px;
   color: #FBF6EC; margin-top: 16px;
