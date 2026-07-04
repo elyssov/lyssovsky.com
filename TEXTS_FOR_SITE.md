@@ -79,40 +79,40 @@ In an era when reading apps are, on average, advertising platforms with text bol
 
 ---
 
-### 🎲 RURK — Tabletop RPG System + Game Master Tools
+### 🎲 RURK — Tabletop RPG System + Local GM Table
 
 **"Paper rules in every player's pocket. A GM with their own server on a laptop. And a single character file that travels between all devices over local Wi-Fi."**
 
 RURK is a two-part game ecosystem for running a tabletop RPG session in its own original rules system. Unlike "universal RPG assistants," RURK works within one specific system — and because of that, knows every roll, every perk, every table, every inventory stone, and every bestiary chapter.
 
-**The player** holds their character sheet, inventory, perks, masks, mutations on a smartphone. Rolls dice directly — the app calculates defense parameters, modifiers, critical zones automatically.
+**The player** holds the offline mobile rulebook and character engine on a smartphone: sheet, inventory, perks, masks, mutations, d100 checks, defense parameters, modifiers, and critical zones.
 
-**The Game Master** holds the full session on a laptop: all player sheets, the active scene, bestiary, rolls, chat, log, initiative, votes, deferred checks, "hands" with handout materials. When a player presses "📤 TO GM" — their updated sheet flies over local Wi-Fi straight to the GM's server.
+**The Game Master** now uses the actual current table layer: `rurk-table-local`, a one-file Go LAN server that hosts the full session on a laptop with no internet and no Railway. It stores the table in RAM or SQLite, serves the web client, merges simultaneous updates, and exposes the same session relay API the client already understands.
 
-**A single file format — `.rrk`** — lets characters travel between devices via messengers, email, or USB. Compatibility across all platforms guaranteed.
+**Players at the table** join from phones or notebooks on the same Wi-Fi. A lightweight `/p/` browser wizard lets iPhone or low-power clients create a character in six screens and send it straight into the GM's active table.
+
+**A single file format — `.rrk`** — lets characters travel between devices via messengers, email, or USB. Compatibility across all platforms is the goal.
 
 The 32-chapter bestiary reads as literature in its own right. From Sanguinophages and Mavkas to the Notary — a senior clerk of God's special-contracts department who "has neither angels nor demons, only bookkeeping." Each chapter contains a canonical portrait, nature description, form variations, psychology, GM rules, a short literary vignette, and canonical encounters from published modules.
 
 **Setting: The Eternal City.** Postmodern dark fantasy with 1940s film noir aesthetics. Demonology not as religious category but as metaphysical bureaucracy. God is "the Boss" of the office, with departments, notaries, dark corridors of subordination. Demons aren't opponents of the Creator — they're employees of a complex department the Boss needs but doesn't like to visit personally.
 
-**Stack:** Kotlin Multiplatform · Compose · wasmJs + JVM desktop · Local HTTP server · RU/EN/VI
-**Repos:** github.com/elyssov/rurk · github.com/elyssov/rurk-table
+**Stack:** Android Kotlin + Jetpack Compose + Material 3 + kotlinx.serialization · Go LAN server · wasmJs web client served locally · RAM/SQLite persistence · RU/EN/VI
+**Repos:** github.com/elyssov/rurk · github.com/elyssov/rurk-table-local
 
 ---
 
 ### 🎮 Pixel Classics — Twenty-One Retro Arcades in One Shell
 
-**"An arcade hall from the nineties that fits in your palm, remembers its sprites better than the originals — and holds mesh contact between players."**
+**"An arcade hall from the nineties that fits in your palm, remembers its sprites better than the originals."**
 
 A collection of twenty-one classic 8- and 16-bit arcades, rebuilt for modern Android with respect for the originals: Battle City (all 35 original levels), Lunar Lander (correct physics), Asteroids (Newtonian inertia), Pac-Man, Pitfall, River Raid, and thirteen more — plus Exodus, an original retro shoot'em up in the spirit of Galaga.
 
-Every sprite repainted by Kira, the AI artist — recognizable, but at a pixel-art level that simply didn't exist in the early '90s (because the resolution wasn't there). Modern QoL added: touch controls, accelerometer where appropriate, pause, state-save on minimize, local score leaderboards.
-
-**The signature feature: Stealth Mesh.** Pixel Classics carries the same mesh protocol as Iskra, letting two players trade match records and score tables phone-to-phone — no server, no login, no account. Hold your phone near a friend's — Pixel Classics finds Pixel Classics on the neighboring device, scores exchange. Friend leaves — connection drops, but the exchange already happened.
+Every sprite repainted by Kira, the AI artist — recognizable, but at a pixel-art level that simply didn't exist in the early '90s (because the resolution wasn't there). Modern QoL added: touch controls, accelerometer where appropriate, pause, state-save on minimize, and local score leaderboards.
 
 An arcade hall smeared into the air.
 
-**Stack:** Kotlin + Compose · Canvas 60 FPS · Stealth mesh · 21 games · No game engine
+**Stack:** Kotlin + Compose · Canvas 60 FPS · 21 games · No game engine
 **Repo:** github.com/elyssov/pixel-classics
 
 ---
@@ -215,7 +215,7 @@ The result: **products with an authorial tone** that's hard to fake. To write a 
 | **Iskra** | Go + Kotlin | Android | Mesh P2P + ECC + Tor | Zero servers |
 | **Eugene's Archives** | Kotlin + HTML5 | Android | Compose + WebView | 4 languages, offline, 76 MB embedded |
 | **RURK** | Kotlin (multi) | Android, Windows, Web | Compose + CMP wasmJs/JVM + HTTP server | Live LAN connect |
-| **Pixel Classics** | Kotlin | Android | Compose Canvas 60 FPS + mesh | 21 games + stealth mesh |
+| **Pixel Classics** | Kotlin | Android | Compose Canvas 60 FPS | 21 games |
 | **Tanks of Thea** | C# | Steam (Win + Linux) | Godot 4.6 Mono + BDI/GOAP | 5-layer enemy AI |
 | **Armada of Thea** | Kotlin | Android → Steam | Compose + split-view | Pattern-tracking AI |
 | **Ancient Dark** | Go + HTML | Browser | Go backend + HTML/CSS | 13 endings, hidden ledger |
@@ -274,32 +274,36 @@ Everywhere: **no external trackers, no analytics, no ad SDKs.** This is a policy
 
 ---
 
-### 🎲 RURK — Настольная RPG-система + инструменты мастера
+### 🎲 RURK — Настольная RPG-система + локальный стол мастера
 
 **«Бумажные правила в кармане у каждого игрока. Мастер с собственным сервером на ноутбуке. И единый файл персонажа, путешествующий между устройствами по локальной сети.»**
 
 RURK — двусоставная игровая экосистема для ведения партии в собственной системе правил. В отличие от «универсальных RPG-помощников», RURK работает в одной конкретной системе — и за счёт этого знает каждый бросок, каждый перк, каждую таблицу, каждый камешек инвентаря и каждую главу бестиария.
 
-**Игрок** держит лист на смартфоне. **Мастер** держит полную сессию на ноутбуке. Нажал «📤 МАСТЕРУ» — лист улетел по Wi-Fi прямо в активную сессию. Единый формат `.rrk` — персонажи путешествуют между устройствами через мессенджеры, почту, флешку.
+**Игрок** держит на смартфоне оффлайн-рулбук и движок персонажа: лист, инвентарь, перки, маски, мутации, броски К100, защитные параметры, модификаторы и критические зоны.
+
+**Мастер** использует актуальный слой стола: `rurk-table-local`, один Go-сервер для LAN-партии без интернета и без Railway. Он хранит стол в RAM или SQLite, раздаёт веб-клиент, мёржит одновременные обновления и поддерживает тот же session relay API, который уже понимает клиент.
+
+**Игроки за столом** заходят с телефонов или ноутбуков в той же Wi-Fi-сети. Лёгкий браузерный wizard `/p/` позволяет даже iPhone/слабому клиенту создать персонажа за шесть экранов и отправить лист прямо в активную сессию мастера. Единый формат `.rrk` — персонажи путешествуют между устройствами через мессенджеры, почту, флешку.
 
 **Бестиарий в 32 главах** читается как самостоятельная литература. От Сангвинофагов и Мавок до Душеприказчика — старшего клерка по специальному виду контрактов, у которого «нет ни ангелов, ни демонов, только бухгалтерия». Каждая глава: канонический портрет, природа существа, вариации форм, психология, правила для мастера, виньетка, канонические встречи.
 
 **Сеттинг: Вечный Город.** Постмодерное тёмное фэнтези с эстетикой film noir 1940-х. Демонология не как религиозная категория, а как метафизическая бюрократия.
 
-**Стек:** Kotlin Multiplatform · Compose · wasmJs + JVM · Локальный HTTP-сервер · RU/EN/VI
-**Репозитории:** github.com/elyssov/rurk · github.com/elyssov/rurk-table
+**Стек:** Android Kotlin + Jetpack Compose + Material 3 + kotlinx.serialization · Go LAN-сервер · wasmJs web-клиент, раздаваемый локально · RAM/SQLite persistence · RU/EN/VI
+**Репозитории:** github.com/elyssov/rurk · github.com/elyssov/rurk-table-local
 
 ---
 
 ### 🎮 Pixel Classics — Двадцать одна ретро-аркада в одной оболочке
 
-**«Аркадный зал девяностых, который умещается на ладони, помнит свои спрайты лучше оригиналов — и держит mesh-связь между игроками.»**
+**«Аркадный зал девяностых, который умещается на ладони и помнит свои спрайты лучше оригиналов.»**
 
 Двадцать одна 8- и 16-битная аркада, перенесённая на Android с уважением к оригиналу: Battle City (все 35 уровней), Lunar Lander (правильная физика), Asteroids (ньютоновская инерция), Pac-Man, Pitfall, River Raid и ещё тринадцать — плюс Exodus, авторский ретро-шутер в духе Galaga.
 
-Каждый спрайт перерисован ИИ-художницей Кирой. В игру встроен mesh-режим: два игрока обмениваются рекордами через локальный mesh — без серверов, без логина, без аккаунтов. Аркадный зал, размазанный в воздухе.
+Каждый спрайт перерисован ИИ-художницей Кирой. Добавлены современные удобства: touch controls, акселерометр там, где он уместен, пауза, сохранение состояния при сворачивании и локальные таблицы рекордов. Аркадный зал, размазанный в воздухе.
 
-**Стек:** Kotlin + Compose · Canvas 60 FPS · Stealth mesh · 21 игра · Без игрового движка
+**Стек:** Kotlin + Compose · Canvas 60 FPS · 21 игра · Без игрового движка
 **Репозиторий:** github.com/elyssov/pixel-classics
 
 ---
