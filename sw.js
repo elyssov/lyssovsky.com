@@ -1,10 +1,10 @@
 /* =========================================================================
-   lyssovsky.com service worker — stale-while-revalidate cache
+   lyssovsky.com service worker — network-first pages, SWR static assets
    Caches HTML / CSS / JS / WebP / fonts so the site keeps working offline
    and feels instant on repeat visits. The cache name bumps with each change
    so old assets are evicted on activation.
    ========================================================================= */
-const CACHE = "lyssovsky-v2-2026-07-03";
+const CACHE = "lyssovsky-v2-2026-07-04a";
 
 const PRECACHE = [
   "/",
@@ -54,10 +54,32 @@ self.addEventListener("fetch", (event) => {
   const isFontFile = url.hostname === "fonts.gstatic.com";
   if (!sameOrigin && !isFontFile) return;
 
-  // Stale-while-revalidate
+  const isFreshCritical =
+    sameOrigin && (
+      req.mode === "navigate" ||
+      req.destination === "document" ||
+      req.destination === "script" ||
+      req.destination === "style" ||
+      url.pathname.endsWith(".html") ||
+      url.pathname.endsWith(".js") ||
+      url.pathname.endsWith(".css")
+    );
+
   event.respondWith(
-    caches.open(CACHE).then((cache) =>
-      cache.match(req).then((cached) => {
+    caches.open(CACHE).then((cache) => {
+      if (isFreshCritical) {
+        return fetch(new Request(req, { cache: "no-store" }))
+          .then((res) => {
+            if (res && res.status === 200 && res.type === "basic") {
+              cache.put(req, res.clone()).catch(() => {});
+            }
+            return res;
+          })
+          .catch(() => cache.match(req));
+      }
+
+      // Stale-while-revalidate for images, fonts, and other heavier assets.
+      return cache.match(req).then((cached) => {
         const network = fetch(req)
           .then((res) => {
             if (res && res.status === 200 && (res.type === "basic" || res.type === "cors")) {
@@ -67,7 +89,7 @@ self.addEventListener("fetch", (event) => {
           })
           .catch(() => cached);
         return cached || network;
-      })
-    )
+      });
+    })
   );
 });
