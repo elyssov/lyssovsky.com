@@ -234,6 +234,26 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
 .portal:hover .portal__media img { transform: scale(1.06); }
 .portal:hover::before { opacity: 1; }
 
+.portal--studio {
+  grid-column: 1 / -1;
+}
+.portal--studio .portal__media {
+  height: clamp(260px, 32vw, 380px);
+}
+.portal--studio .portal__media img {
+  object-position: 50% 44%;
+}
+.portal--studio .portal__pad {
+  max-width: 780px;
+}
+.portal--studio .portal__title {
+  font-size: clamp(30px, 4vw, 44px);
+}
+.portal--studio .portal__desc {
+  font-size: 16px;
+  max-width: 720px;
+}
+
 .portal__num {
   font-family: var(--serif); font-style: italic; font-size: 14px;
   color: var(--gold-dim); margin-bottom: 14px;
@@ -598,6 +618,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
   .portals { padding: 56px 0 24px; }
   .portal-grid { grid-template-columns: 1fr; gap: 16px; }
   .portal__media { height: 190px; }
+  .portal--studio { grid-column: auto; }
+  .portal--studio .portal__media { height: 220px; }
   .portal__pad { padding: 26px 24px 28px; }
   .contact { padding: 60px 0 70px; }
   .footer { padding: 56px 0 40px; }
