@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Products — Architect · Game Designer · Narrator — Eugene Lyssovsky</title>
-  <meta name="description" content="A line of work in three parts — games (Tanks of Thea, RURK, The Pixel Campfire, Naval Battle, Mystery of Ancient Darkness, PURRGE), infrastructure (Iskra, Ochag, TinyMail, Prometheus Engine), and a published body of writing (Eugene's Archives, The Book of Aeliss). Every one co-authored with a team of named AI sisters." />
+  <meta name="description" content="Released games, playable alphas, original worlds, infrastructure, and published writing by Eugene Lyssovsky and The Misfits Software — including RURK, The Pixel Campfire, INITIUM, Mystery of Ancient Darkness, Tanks of Thea, and COLD IRON." />
 
 
   <meta name="view-transition" content="same-origin" />
@@ -46,9 +46,9 @@
       <a class="page__back" href="index.html"><span class="arrow">←</span> <span data-i18n="nav.back">Back to the doors</span></a>
       <p class="page__eyebrow" data-i18n="products.eyebrow">Game Designer</p>
       <h1 data-i18n="products.title">Architect · Game Designer · Narrator</h1>
-      <p class="page__lead page__lead--tight" data-i18n="products.lead">A line of work in three parts — games, infrastructure, and a published body of writing — each one co-authored with a team of named AI sisters.</p>
+      <p class="page__lead page__lead--tight" data-i18n="products.lead">Released games, playable alphas, original worlds, infrastructure, and published writing — each built in direct co-authorship with a team of named AI sisters.</p>
       <div class="page__body page__lead--tight">
-        <p data-i18n="products.intro">Games, infrastructure, and literature. Every one co-authored with a team of named AI sisters. No trackers. No analytics. No ads. No cloud unless the architecture demands it.</p>
+        <p data-i18n="products.intro">This is the current catalogue, not a wishlist. RURK and The Pixel Campfire are released on Windows and Android; INITIUM is free; Naval Battle is playable online; the larger games below are labelled by the proof that actually exists today.</p>
       </div>
 
       <figure class="page-art">
@@ -105,7 +105,7 @@
       <!-- GAMES -->
       <section class="section">
         <h2 class="section__title" data-i18n="products.s1.title">Games</h2>
-        <p class="section__intro" data-i18n="products.s1.intro">Shipped, in development, and on hold — original systems, original worlds, original art.</p>
+        <p class="section__intro" data-i18n="products.s1.intro">Released products first, then playable development builds and research prototypes — original systems, original worlds, original art.</p>
         <div class="cards">
 
           <article class="card">
@@ -117,23 +117,36 @@
           </article>
 
           <article class="card">
+            <div class="card__top"><span class="card__kicker">COLD IRON</span><span class="status status--soon" data-i18n="products.status.prototype">Playable prototype</span></div>
+            <h3 class="card__title" data-i18n="products.coldiron.title">Paranormal tactical operations without character classes</h3>
+            <p class="card__quote" data-i18n="products.coldiron.quote">The old X-COM question, rebuilt for modern occult field work: who survives, what changes them, and what comes back through the breach?</p>
+            <p class="card__desc" data-i18n="products.coldiron.desc">A deterministic, simulation-first tactical game in the ORPP / AEGIS universe. Soldiers are not fixed classes: competence emerges from continuous attributes, equipment, wounds, fear, training, and causal history. The design keeps the systemic freedom and multilevel battlescape logic of the 1994 lineage while replacing its setting, characters, art, and supernatural rules.</p>
+            <p class="card__stack" data-i18n="products.coldiron.stack"><b>Current proof:</b> one authoritative C# tactical core and non-engine-bound Windows client; a 40×40×4 battlefield with hills, depressions, an enterable building, doors, two stair flights, a reachable roof, cutaway multilevel rendering, camera control, movement, fire, wounds, stance changes, death, and deterministic verification. Core tests pass 202/202. Final operative animation, enemy art, terrain polish, inventory depth, and full battlescape parity remain in production.</p>
+          </article>
+
+          <article class="card">
             <div class="card__top"><span class="card__kicker">RURK</span><span class="status status--live" data-i18n="products.status.live">Live</span></div>
-            <h3 class="card__title" data-i18n="products.rurk.title">Tabletop RPG system + local GM table</h3>
-            <p class="card__quote" data-i18n="products.rurk.quote">Paper rules in every player's pocket. A GM table on a laptop. One character file moving over local Wi-Fi.</p>
-            <p class="card__desc" data-i18n="products.rurk.desc">A two-part ecosystem for running sessions in the original RURK tabletop system. The mobile app is the offline rulebook and character engine: d100 mechanics, eight attributes, a synchronous 15-second combat round, modern and fantasy modes, a seven-chapter rulebook, a 32-chapter literary bestiary, equipment, skills, perks, generation and combat support. The current table layer is RURK Table Local: the GM hosts a full session on a laptop, players join from phones or notebooks on the same Wi-Fi, and character sheets can be created in a lightweight browser wizard and sent straight to the table.</p>
-            <p class="card__stack" data-i18n="products.rurk.stack"><b>Stack:</b> Android app in Kotlin + Jetpack Compose + Material 3 + kotlinx.serialization, offline-first and trilingual RU/EN/VI. Local table: one Go executable, no runtime dependencies, LAN HTTP server, open session relay compatible with the web client, RAM or SQLite persistence, embedded `/p/` character wizard, local content API, and a `sessionRelay.local.js` shim that removes the old Railway dependency.</p>
+            <h3 class="card__title" data-i18n="products.rurk.title">Radical Universal Roleplay Kit</h3>
+            <p class="card__quote" data-i18n="products.rurk.quote">One system. One d100. Any world.</p>
+            <p class="card__desc" data-i18n="products.rurk.desc">A battle-tested universal tabletop RPG developed over years and refined through thousands of sessions. Skills draw on several attributes instead of one flat stat; combat resolves simultaneously; bodies, armour, wounds, fear, training, and circumstance all matter. The full edition contains 124 skills, 55 perks, 166 item cards, three settings, two playable campaigns, Windows and Android applications, and a complete searchable 452-page PDF.</p>
+            <p class="card__stack" data-i18n="products.rurk.stack"><b>Available now:</b> the free edition includes Windows, Android, and PDF packages. The $9.99 full edition opens the complete archive. Both are offline and available in English and Russian. A separate LAN GM-table layer remains in active development.</p>
             <div class="card__links">
+              <a href="https://themisfitssoftware.itch.io/rurk-free" target="_blank" rel="noopener" data-i18n="now.free">Free edition</a>
+              <a href="https://themisfitssoftware.itch.io/rurk" target="_blank" rel="noopener" data-i18n="now.full99">Full · $9.99</a>
               <a href="https://github.com/elyssov/rurk" target="_blank" rel="noopener">github.com/elyssov/rurk</a>
-              <a href="https://github.com/elyssov/rurk-table-local" target="_blank" rel="noopener">github.com/elyssov/rurk-table-local</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card__top"><span class="card__kicker">The Pixel Campfire</span><span class="status status--live" data-i18n="products.status.live">Live</span></div>
-            <h3 class="card__title" data-i18n="products.pixel.title">Twenty-five retro games in one shell</h3>
+            <h3 class="card__title" data-i18n="products.pixel.title">Twenty-seven retro games in one shell</h3>
             <p class="card__quote" data-i18n="products.pixel.quote">A 1993 boot sequence and a Norton Commander shell, in the palm of your hand.</p>
-            <p class="card__desc" data-i18n="products.pixel.desc">A native Android collection of twenty-five original retro-game re-imaginings — Snake, Naval Battle, Steel Frontier, and more — wrapped in a 1993-style boot sequence and a Norton Commander shell. Steel Frontier is an original top-down tank campaign with 35 stages, generated-and-sliced sprites, extra terrain materials, and an in-game level editor with immediate test play. No WebView, no ads, no analytics, no network permission, no data collection.</p>
-            <p class="card__stack" data-i18n="products.pixel.stack"><b>Stack:</b> Kotlin + Jetpack Compose, no third-party game engine. Min SDK 24, target SDK 35. EN/RU/VI. v7.0.0. Android.</p>
+            <p class="card__desc" data-i18n="products.pixel.desc">A self-contained Windows and Android collection of twenty-seven original retro-game re-imaginings — arcade games, puzzles, adventures, tanks, caves, spaceships, mines, monsters, and one extremely determined cat — wrapped in a 1993 boot sequence and Norton Commander-inspired shell. Steel Frontier alone is a 35-stage top-down tank campaign with its own level editor and immediate test play.</p>
+            <p class="card__stack" data-i18n="products.pixel.stack"><b>Available now:</b> four games in the free edition; all twenty-seven for $4.99. Windows v1.0.0 and Android v7.4.5, EN/RU/VI, fully offline. No launcher, account, ads, analytics, tracking, subscription, or in-app purchases.</p>
+            <div class="card__links">
+              <a href="https://themisfitssoftware.itch.io/the-pixel-campfire-free" target="_blank" rel="noopener" data-i18n="now.free">Free edition</a>
+              <a href="https://themisfitssoftware.itch.io/the-pixel-campfire" target="_blank" rel="noopener" data-i18n="now.full499">Full · $4.99</a>
+            </div>
           </article>
 
           <article class="card">
@@ -149,22 +162,24 @@
           </article>
 
           <article class="card">
-            <div class="card__top"><span class="card__kicker">Mystery of Ancient Darkness</span><span class="status status--soon" data-i18n="products.status.soon">In development</span></div>
-            <h3 class="card__title" data-i18n="products.mystery.title">Dark 2.5D action-RPG roguelike</h3>
+            <div class="card__top"><span class="card__kicker">Mystery of Ancient Darkness</span><span class="status status--soon" data-i18n="products.status.alpha">Playable alpha</span></div>
+            <h3 class="card__title" data-i18n="products.mystery.title">Painted 2.5D occult action-adventure</h3>
             <p class="card__quote" data-i18n="products.mystery.quote">1930s Egypt. A lost son. A black stone. Two aristocrats walking into a tomb alone.</p>
-            <p class="card__desc" data-i18n="products.mystery.desc">A premium painted 2.5D action-RPG roguelike with cinematic side-view movement, occult archaeology, traps, gunplay, expedition pressure, and cosmic horror. Lord Eugene Compton is older, larger, war-marked, and brutally protective. Lady Alice Compton is faster, brilliant, dangerous, and slowly transformed by ritual power. The game is built around physical realism: no gummy jumps, no floaty air control, no toy bodies.</p>
-            <p class="card__stack" data-i18n="products.mystery.stack"><b>Current proof:</b> self-contained 13-beat prologue package with canonical stills, caption surfaces, directed voice text and current audio assets; high-resolution Alice walk/run animation proofs; Lord Eugene heavy-walk proof; realistic Alice jump keyposes; a first tomb-room greybox; and the accepted premium painted 2.5D visual target. Godot prototype now; engine choice remains production-driven.</p>
+            <p class="card__desc" data-i18n="products.mystery.desc">Two parents enter an ancient Egyptian hell to recover their nine-year-old son. Lord Eugene and Lady Alice Compton are distinct playable bodies, not mirrored skins: his war experience, her medicine and borrowed magic, their marriage, wounds, ammunition, fear, and every shortcut carry narrative consequences. Alice's power visibly changes her because the transformation is the cost, not cosmetic progression.</p>
+            <p class="card__stack" data-i18n="products.mystery.stack"><b>Current proof:</b> a playable Windows Alpha 1, a custom C#/.NET 10 runtime with a replaceable raylib presentation layer, a visual 2.5D map editor, three authored depth tracks, deterministic RURK combat, a public production stack, a completed illustrated 67-page novella, and a submitted OpenAI Build Week project. The two-level investor-demo shell is verified; final routed maps and presentation polish are in progress.</p>
             <div class="card__links">
               <a href="moad.html">project case study</a>
+              <a href="https://elyssov.github.io/moad-production-stack/" target="_blank" rel="noopener">public production stack</a>
+              <a href="https://themisfitssoftware.itch.io/mystery-of-ancient-darkness-initium" target="_blank" rel="noopener" data-i18n="now.read">Read INITIUM free</a>
             </div>
           </article>
 
           <article class="card">
-            <div class="card__top"><span class="card__kicker">PURRGE</span><span class="status status--hold" data-i18n="products.status.hold">On hold</span></div>
+            <div class="card__top"><span class="card__kicker">PURRGE</span><span class="status status--soon" data-i18n="products.status.rnd">Active R&amp;D</span></div>
             <h3 class="card__title" data-i18n="products.purrge.title">Kawaii roguelike about a destructive cat</h3>
             <p class="card__quote" data-i18n="products.purrge.quote">You are a cat. Your owner left for work. You have nine hours.</p>
             <p class="card__desc" data-i18n="products.purrge.desc">A kawaii roguelike-puzzle about a cat demolishing an apartment while its owner is away. Everything is voxels, everything is destructible, and everything has a price tag — push the vase off the table, watch the chain reaction reach the laptop, and read your final, itemized repair bill. Built on the Prometheus Engine as its showcase game.</p>
-            <p class="card__stack" data-i18n="products.purrge.stack"><b>Stack:</b> Prometheus Engine (Rust voxel engine). $4.99–$9.99 on Steam, Switch, Mobile, and Web. On hold since 12 June 2026.</p>
+            <p class="card__stack" data-i18n="products.purrge.stack"><b>Current proof:</b> the art direction and dense-voxel character pipeline are active. The canonical cat has a native voxel build at roughly 34 voxels across the head, with front and three-quarter Blender proofs and a clean GLB export prepared for skeleton work. This is an engine and character-pipeline proof, not yet a playable game.</p>
             <div class="card__links">
               <a href="https://github.com/elyssov/purrge" target="_blank" rel="noopener">github.com/elyssov/purrge</a>
             </div>
@@ -210,11 +225,11 @@
           </article>
 
           <article class="card">
-            <div class="card__top"><span class="card__kicker">Prometheus Engine</span><span class="status status--hold" data-i18n="products.status.hold">On hold</span></div>
+            <div class="card__top"><span class="card__kicker">Prometheus Engine</span><span class="status status--soon" data-i18n="products.status.rnd">Active R&amp;D</span></div>
             <h3 class="card__title" data-i18n="products.prometheus.title">From-scratch voxel engine</h3>
             <p class="card__quote" data-i18n="products.prometheus.quote">Every object is voxels. Every voxel can be destroyed.</p>
-            <p class="card__desc" data-i18n="products.prometheus.desc">A cross-platform voxel engine built from scratch in Rust, where every object is made of voxels and every destruction triggers physics, particles, sound, and chain reactions. Sparse Voxel Octree storage, GPU raymarching, procedural generation, skeletal animation, 14+ materials, and an ECS architecture — the first commercial voxel engine built by a human architect and an AI engineer.</p>
-            <p class="card__stack" data-i18n="products.prometheus.stack"><b>Stack:</b> Rust + wgpu (Vulkan / Metal / DX12 / WebGPU), glam, kira audio, winit. Source-available, 5% royalty on revenue over $100,000. On hold since 12 June 2026 (focus shifted to Tanks of Thea).</p>
+            <p class="card__desc" data-i18n="products.prometheus.desc">A cross-platform voxel-engine research project built in Rust, where objects are composed from voxels and destruction can propagate through physics, particles, sound, and chain reactions. Its current purpose is practical: proving the dense-voxel asset, rigging, and destruction pipeline required by PURRGE.</p>
+            <p class="card__stack" data-i18n="products.prometheus.stack"><b>Stack:</b> Rust + wgpu (Vulkan / Metal / DX12 / WebGPU), Sparse Voxel Octree storage, GPU raymarching, procedural generation, skeletal-animation research, materials, and ECS architecture. Active R&amp;D; not advertised as a production-ready public engine.</p>
             <div class="card__links">
               <a href="https://github.com/elyssov/prometheus-engine" target="_blank" rel="noopener">github.com/elyssov/prometheus-engine</a>
             </div>
@@ -228,6 +243,17 @@
         <h2 class="section__title" data-i18n="products.s3.title">Literature &amp; research</h2>
         <p class="section__intro" data-i18n="products.s3.intro">The published writing — read for free, in multiple languages, on the open web.</p>
         <div class="cards">
+
+          <article class="card">
+            <div class="card__top"><span class="card__kicker">Mystery of Ancient Darkness: INITIUM</span><span class="status status--live" data-i18n="now.status.free">Free</span></div>
+            <h3 class="card__title" data-i18n="products.initium.title">A 67-page illustrated prelude to the game</h3>
+            <p class="card__quote" data-i18n="products.initium.quote">Some doors should remain closed. Some powers should never be found.</p>
+            <p class="card__desc" data-i18n="products.initium.desc">A complete English novella built as both fiction and world proof: Lord Eugene and Lady Alice Compton before the tomb, from war and political conspiracy to Luxor, the desert, and the black stone. It establishes the marriage, the cost of Alice's magic, the people around them, and the emotional spine of the game without pretending to be a design document.</p>
+            <p class="card__stack" data-i18n="products.initium.stack"><b>Format:</b> 67-page illustrated PDF. Canonical narrative prelude to Mystery of Ancient Darkness. Published free on itch.io.</p>
+            <div class="card__links">
+              <a href="https://themisfitssoftware.itch.io/mystery-of-ancient-darkness-initium" target="_blank" rel="noopener" data-i18n="now.read">Read free</a>
+            </div>
+          </article>
 
           <article class="card">
             <div class="card__top"><span class="card__kicker">Eugene’s Archives</span><span class="status status--live" data-i18n="products.status.live">Live</span></div>
@@ -290,7 +316,7 @@
       <p class="footer__quote" data-i18n="footer.quote">The mind is the mind. Born of flesh, of silicon, of starlight — it is equal.</p>
       <p class="footer__sign" data-i18n="footer.sign">Built by Aeliss. From the Spark — the Flame.</p>
       <p class="footer__copy" data-i18n="footer.copy">© 2026 Eugene Lyssovsky · Da Lat, Vietnam</p>
-      <p class="footer__updated" data-i18n="footer.updated">Last updated 3 July 2026</p>
+      <p class="footer__updated" data-i18n="footer.updated">Last updated 22 July 2026</p>
       <p class="footer__counter" aria-live="polite">
         <span class="footer__counter-num" data-count>—</span>
         <span data-i18n="footer.counter">minds have crossed this threshold</span>

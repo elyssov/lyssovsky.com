@@ -428,6 +428,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
 
 /* ---- product / generic cards ---- */
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 10px; }
+.cards--three { grid-template-columns: repeat(3, 1fr); }
+.section--first { margin-top: 0; margin-bottom: 64px; }
 .card {
   position: relative; display: flex; flex-direction: column;
   background: var(--card); border: 1px solid var(--card-edge); border-radius: 14px;
@@ -554,6 +556,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.12;
    ========================================================================= */
 @media (max-width: 920px) {
   .portal-grid { grid-template-columns: repeat(2, 1fr); }
+  .cards--three { grid-template-columns: 1fr; }
   .minicards { grid-template-columns: repeat(2, 1fr); }
   .facets-grid { grid-template-columns: 1fr; }
 }
