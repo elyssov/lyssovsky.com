@@ -51,6 +51,11 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://lyssovsky.com/biography.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://lyssovsky.com/about-aeliss.html</loc>
     <lastmod>2026-06-22</lastmod>
     <priority>0.75</priority>
